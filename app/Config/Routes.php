@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 $routes->get('/', 'Home::index');
 $routes->get('/price', 'Home::harga');
+$routes->get('/kalkulator', 'Home::kalkulator');

@@ -12,11 +12,11 @@ class Home extends BaseController
         return view('pages/home', $data);
     }
 
-    public function harga()
+    public function kalkulator()
     {
         $data = [
-            'title' => 'Harga Listrik Per kWh | PEMBAYARAN LISTRIK ONLINE'
+            'title' => 'Kalkulator | PEMBAYARAN LISTRIK ONLINE'
         ];
-        return view('pages/price', $data);
+        return view('pages/kalkulator', $data);
     }
 }
