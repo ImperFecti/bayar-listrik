@@ -1,0 +1,204 @@
+.hero {
+  background-image: url(https://1.bp.blogspot.com/-zxeLvfoScGk/XzyJGtqniOI/AAAAAAAA4z0/C-J-3GfC4sEOedX_EY5Ekx1RTgGEF9TNwCLcBGAsYHQ/s2560/towers_wires_mountains_181183_3840x2160.jpg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  -webkit-box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  -moz-box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  box-shadow: inset 0px -142px 73px -36px rgba(255, 255, 255, 1);
+  color: #ffffff;
+  h1,
+  h2,
+  h5 {
+    text-shadow: #18181a 2px 5px 10px;
+  }
+}
+
+.pricing {
+  text-align: center;
+  padding: 50px;
+}
+
+.pricing h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.pricing p {
+  color: #666;
+  margin-bottom: 40px;
+}
+
+.plans {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.plan {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(25% - 20px); /* Adjust to fit 4 items in a row */
+  text-align: left;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.plan:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: #e0e0e0; /* Optional: Change background color on hover */
+}
+
+.plan h2 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.plan .price {
+  font-size: 2em;
+  color: #333;
+}
+
+.plan .price span {
+  font-size: 0.5em;
+}
+
+.plan p {
+  color: #999;
+  margin-bottom: 20px;
+}
+
+.plan button {
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 20px;
+  transition: background 0.3s;
+}
+
+.plan button:hover {
+  background: #4500b5;
+}
+
+.plan ul {
+  list-style: none;
+  padding: 0;
+}
+
+.plan ul li {
+  margin-bottom: 10px;
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
+.button-36 {
+  background-image: linear-gradient(
+    92.88deg,
+    #455eb5 9.16%,
+    #5643cc 43.89%,
+    #673fd7 64.72%
+  );
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-family: "Inter UI", "SF Pro Display", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 03rem 1.6rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all 0.5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-36:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: 0.1s;
+}
+
+@media (min-width: 768px) {
+  .button-36 {
+    padding: 0 2.6rem;
+  }
+}
+
+.button-57 {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #18181a;
+  color: #18181a;
+  display: inline-block;
+  font-size: 1rem; /* Adjusted to match navbar font size */
+  line-height: 1.5; /* Adjusted for proper vertical alignment */
+  padding: 0.375rem 3rem; /* Adjusted to match navbar padding */
+  text-decoration: none;
+  cursor: pointer;
+  background: #ffffff62;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-57 span:first-child {
+  position: relative;
+  transition: color 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 10;
+}
+
+.button-57 span:last-child {
+  color: white;
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transition: all 500ms cubic-bezier(0.48, 0, 0.12, 1);
+  z-index: 100;
+  opacity: 0;
+  top: 50%;
+  left: 50%;
+  transform: translateY(225%) translateX(-50%);
+  height: 7px;
+  line-height: 13px;
+  white-space: nowrap; /* Added to ensure text stays on one line */
+}
+
+.button-57:after {
+  content: "";
+  position: absolute;
+  bottom: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  transform-origin: bottom center;
+  transition: transform 600ms cubic-bezier(0.48, 0, 0.12, 1);
+  transform: skewY(9.3deg) scaleY(0);
+  z-index: 50;
+}
+
+.button-57:hover:after {
+  transform-origin: bottom center;
+  transform: skewY(9.3deg) scaleY(2);
+}
+
+.button-57:hover span:last-child {
+  transform: translateX(-50%) translateY(-100%);
+  opacity: 1;
+  transition: all 900ms cubic-bezier(0.48, 0, 0.12, 1);
+}
