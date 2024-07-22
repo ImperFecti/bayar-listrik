@@ -18,7 +18,7 @@
                     <a class="nav-link" href="/kalkulator">Kalkulator Listrik</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Tagihan Listrik</a>
+                    <a class="nav-link" href="/tagihanlistrik">Tagihan Listrik</a>
                 </li>
             </ul>
         </div>
