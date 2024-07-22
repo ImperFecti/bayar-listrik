@@ -1,9 +1,13 @@
+<!-- import layout template -->
 <?= $this->extend('layout/template'); ?>
+
+<!-- declare content -->
 <?= $this->section('content'); ?>
+<!-- price tags section start -->
 <section class="pricing" id="Tarif">
     <h1>Harga Listrik Per kWh</h1>
     <p>Temukan tarif tagihan listrik yang sesuai dengan kebutuhan Anda. Kami menyediakan list harga sesuai dengan tarif per kWh di tahun 2024 ini.</p>
-    <a class="button-79" role="button" href="#">Hitung Tarif Listrik per kWh</a>
+    <a class="button-79" role="button" href="/kalkulator">Hitung Tarif Listrik per kWh</a>
     <br><br>
     <div class="plans">
         <div class="plan">
@@ -48,4 +52,6 @@
         </div>
     </div>
 </section>
+<!-- price tags section end -->
 <?= $this->endSection(); ?>
+<!-- ending declare content -->

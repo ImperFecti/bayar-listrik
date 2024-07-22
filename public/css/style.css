@@ -1,3 +1,4 @@
+/* styling hero section */
 .hero {
   background-image: url(https://1.bp.blogspot.com/-zxeLvfoScGk/XzyJGtqniOI/AAAAAAAA4z0/C-J-3GfC4sEOedX_EY5Ekx1RTgGEF9TNwCLcBGAsYHQ/s2560/towers_wires_mountains_181183_3840x2160.jpg);
   min-height: 100vh;
@@ -16,6 +17,7 @@
   }
 }
 
+/* styling price tags */
 .pricing {
   text-align: center;
   padding: 50px;
@@ -84,16 +86,113 @@
   align-items: center;
 }
 
-.calclistrik {
-  width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: rgba(255, 255, 255, 0.747) 0px 22px 70px 4px;
+/* styling nvbr as mini navbar */
+.nvbr {
+  font-family: Arial, sans-serif;
+  margin: 50px 0;
+  box-sizing: border-box;
 }
 
+.nvbr-container {
+  display: flex;
+  justify-content: space-around; /* Use space-around for equal spacing */
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
+  padding: 20px;
+}
+
+.nvbr-item {
+  flex: 1 1 200px; /* Adjust the size to ensure all items are equal */
+  text-align: center;
+  margin: 10px; /* Add margin for spacing between items */
+  padding: 40px 20px; /* Adjust padding as needed */
+  color: #333;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.nvbr-item:hover {
+  color: #007bff;
+  background-color: #f8f8f8;
+}
+
+.nvbr-item span {
+  display: block;
+  font-size: 15px;
+  color: #999;
+  font-weight: normal;
+}
+
+/* styling calculator */
+.calculator {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 500px;
+}
+
+.body-calc {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url(../img/diagonal-noise.png);
+  margin: 0;
+  -webkit-box-shadow: inset 0px 182px 68px -70px rgba(248, 249, 250, 1);
+  -moz-box-shadow: inset 0px 182px 68px -70px rgba(248, 249, 250, 1);
+  box-shadow: inset 0px 182px 68px -70px rgba(248, 249, 250, 1);
+}
+
+.calculator h1 {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.input-group {
+  margin: 30px 0;
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.input-group input,
+.input-group select {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-group span {
+  margin-top: 5px;
+}
+
+#calculate-btn,
+#reset-btn {
+  background: #6200ea;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+#calculate-btn:hover,
+#reset-btn:hover {
+  background: #4b00b6;
+}
+
+/* styling buttons */
 .button-57 {
   position: relative;
   overflow: hidden;
@@ -219,6 +318,7 @@
   transform: translateY(0.125rem);
 }
 
+/* media queries */
 @media (max-width: 768px) {
   .plans {
     flex-direction: column;
@@ -227,5 +327,15 @@
 
   .plan {
     width: 80%; /* Adjust width for better appearance */
+  }
+
+  .nvbr-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .nvbr-item {
+    padding: 20px 40px;
+    font-size: 18px;
   }
 }

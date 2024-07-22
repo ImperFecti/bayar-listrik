@@ -15,8 +15,16 @@ class Home extends BaseController
     public function kalkulator()
     {
         $data = [
-            'title' => 'Kalkulator | PEMBAYARAN LISTRIK ONLINE'
+            'title' => 'Kalkulator | HITUNG PEMBAYARAN LISTRIK ONLINE'
         ];
         return view('pages/kalkulator', $data);
+    }
+
+    public function harga()
+    {
+        $data = [
+            'title' => 'Tarif | PEMBAYARAN LISTRIK ONLINE'
+        ];
+        return view('pages/price', $data);
     }
 }
