@@ -175,7 +175,8 @@
 }
 
 #calculate-btn,
-#reset-btn {
+#reset-btn,
+#modal-btn {
   background: #6200ea;
   color: #fff;
   border: none;
@@ -190,6 +191,27 @@
 #calculate-btn:hover,
 #reset-btn:hover {
   background: #4b00b6;
+}
+
+/* CSS for fade in effect */
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.fade-in.show {
+  opacity: 1;
+}
+
+/* CSS for button group in kalkulator.php */
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.button-group button {
+  flex: 1;
 }
 
 /* styling buttons */

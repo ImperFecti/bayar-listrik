@@ -4,7 +4,7 @@
 <!-- declare content -->
 <?= $this->section('content'); ?>
 <!-- hero section start -->
-<section class="hero">
+<section class="hero fade-in">
     <main class="container-xl">
         <h1>Aplikasi Pembayaran Listrik Pascabayar</h1>
         <h2>Nikmati Kemudahan Pembayaran Tagihan Listrik Tanpa Ribet</h2>
@@ -18,7 +18,7 @@
 <!-- hero section end -->
 
 <!-- mini navbar start -->
-<div class="nvbr">
+<div class="nvbr fade-in">
     <div class="nvbr-container">
         <a href="#Home" class="nvbr-item">
             <span>01</span>
@@ -37,13 +37,13 @@
 <!-- mini navbar end -->
 
 <!-- home section start -->
-<div class="container-lg" id="Home">
+<div class="container-lg fade-in" id="Home">
     <h2 style="text-align: center;">"Kami menyediakan solusi pembayaran tagihan listrik yang cepat, aman, dan nyaman. Dengan beberapa klik saja, Anda dapat menyelesaikan pembayaran tagihan listrik Anda kapan saja dan di mana saja."</h2> <br>
     <hr>
     <table class="table table-hover table-borderless">
         <thead>
             <tr>
-                <th class=" text-center">
+                <th class="text-center">
                     <h3>Keunggulan Website Ini:</h3>
                 </th>
             </tr>

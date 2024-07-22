@@ -4,7 +4,7 @@
 <!-- declare content -->
 <?= $this->section('content'); ?>
 <!-- price tags section start -->
-<section class="pricing" id="Tarif">
+<section class="pricing fade-in" id="Tarif">
     <h1>Harga Listrik Per kWh</h1>
     <p>Temukan tarif tagihan listrik yang sesuai dengan kebutuhan Anda. Kami menyediakan list harga sesuai dengan tarif per kWh di tahun 2024 ini.</p>
     <a class="button-79" role="button" href="/kalkulator">Hitung Tarif Listrik per kWh</a>

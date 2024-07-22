@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.getElementById("calculator-form");
   const dailyUsageInput = document.getElementById("daily-usage");
@@ -53,4 +57,26 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   resetBtn.addEventListener("click", resetFields);
+});
+
+// JavaScript for fade in effect on scroll
+document.addEventListener("DOMContentLoaded", function () {
+  const elements = document.querySelectorAll(".fade-in");
+
+  function checkFadeIn() {
+    const triggerHeight = window.innerHeight * 0.75;
+
+    elements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+
+      if (elementTop < triggerHeight) {
+        element.classList.add("show");
+      } else {
+        element.classList.remove("show");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", checkFadeIn);
+  checkFadeIn(); // Initial check in case elements are already in view
 });
