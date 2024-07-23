@@ -35,4 +35,12 @@ class Home extends BaseController
         ];
         return view('pages/tagihanlistrik', $data);
     }
+
+    public function admin()
+    {
+        $data = [
+            'title' => 'Admin | PEMBAYARAN LISTRIK ONLINE'
+        ];
+        return view('pages/admin/admin', $data);
+    }
 }
