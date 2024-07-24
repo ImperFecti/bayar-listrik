@@ -2,13 +2,23 @@
 
 namespace App\Controllers;
 
+use Myth\Auth\Models\UserModel as MythUserModel;
+
 class Pelanggan extends BaseController
 {
     public function profilepelanggan()
     {
+        $userModel = new MythUserModel();
+
+        // Dapatkan data pengguna yang sedang login
+        $userId = user()->id;
+        $user = $userModel->find($userId);
+
         $data = [
-            'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE'
+            'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE',
+            'user' => $user
         ];
+
         return view('pages/pelanggan/profilepelanggan', $data);
     }
 

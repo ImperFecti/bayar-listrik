@@ -17,7 +17,7 @@
                 </div>
                 <hr>
                 <div class="row mt-3">
-                    <div class="col-md-12"><label class="labels">Nomor Handphone</label><input type="text" class="form-control" placeholder="masukkan nomor hp" value=""></div>
+                    <div class="col-md-12"><label class="labels">Nomor Handphone</label><input type="text" class="form-control" placeholder="masukkan nomor handphone" value=""></div>
                     <div class="col-md-12 mt-3"><label class="labels">Alamat Rumah</label><input type="text" class="form-control" placeholder="masukkan alamat rumah" value=""></div>
                     <div class="col-md-12 mt-3"><label class="labels">Email</label><input type="text" class="form-control" placeholder="masukkan alamat email" value=""></div>
                 </div>
