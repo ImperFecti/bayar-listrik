@@ -31,9 +31,8 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <?php if (logged_in()) : ?>
-                            <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                            <li><a class="dropdown-item" href="/settings">Settings</a></li>
-                            <li><a class="dropdown-item" href="/notifications">Notifications</a></li>
+                            <li><a class="dropdown-item" href="/profilepelanggan">Profile</a></li>
+                            <li><a class="dropdown-item" href="/editprofilepelanggan">Edit Profile</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

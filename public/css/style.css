@@ -1,3 +1,8 @@
+.custom-link {
+  color: white;
+  text-decoration: none;
+}
+
 /* styling hero section */
 .hero {
   background-image: url(https://1.bp.blogspot.com/-zxeLvfoScGk/XzyJGtqniOI/AAAAAAAA4z0/C-J-3GfC4sEOedX_EY5Ekx1RTgGEF9TNwCLcBGAsYHQ/s2560/towers_wires_mountains_181183_3840x2160.jpg);
@@ -110,6 +115,54 @@
   color: #333;
   display: flex;
   align-items: center;
+}
+
+/* styling profilepelanggan */
+.gradient-custom {
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right bottom,
+    rgb(71, 172, 255),
+    rgb(38, 107, 255)
+  );
+
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right bottom,
+    rgb(71, 172, 255),
+    rgb(38, 107, 255)
+  );
+}
+
+/* styling editprofilepelanggan */
+.form-control:focus {
+  box-shadow: none;
+  border-color: #4cb7ff;
+}
+
+.profile-button {
+  background: rgb(71, 172, 255);
+  box-shadow: none;
+  border: none;
+}
+
+.profile-button:hover {
+  background: #18dcff;
+}
+
+.profile-button:focus {
+  background: #18dcff;
+  box-shadow: none;
+}
+
+.profile-button:active {
+  background: #18dcff;
+  box-shadow: none;
+}
+
+.back:hover {
+  color: #18dcff;
+  cursor: pointer;
 }
 
 /* styling navbar */

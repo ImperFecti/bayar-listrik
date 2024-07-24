@@ -12,7 +12,7 @@
             Kami menyediakan solusi pembayaran tagihan listrik yang cepat, aman, dan nyaman. Dengan beberapa klik saja, Anda dapat menyelesaikan pembayaran tagihan listrik Anda kapan saja dan di mana saja.
         </h5>
         <br>
-        <a class="button-57" role="button" href="#"><span class="text">Bayar Tagihan</span><span>BAYAR SEKARANG</span></a>
+        <a class="button-57" role="button" href="/tagihanlistrik"><span class="text">Tagihan Listrik</span><span>Lihat Tagihan</span></a>
     </main>
 </section>
 <!-- hero section end -->
