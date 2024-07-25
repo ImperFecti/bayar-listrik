@@ -1,19 +1,23 @@
-<!-- import layout template -->
+<!-- Import layout template -->
 <?= $this->extend('layout/template'); ?>
 
-<!-- declare content -->
+<!-- Declare content section -->
 <?= $this->section('content'); ?>
 
+<!-- Profile page section -->
 <section class="vh-100" style="background-color: #f4f5f7;">
     <div class="container py-5 h-100">
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-6 mb-4 mb-lg-0">
+                <!-- User profile card -->
                 <div class="card mb-3" style="border-radius: .5rem;">
                     <div class="row g-0">
+                        <!-- Profile picture and basic info -->
                         <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
                             <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
                             <h3><?= esc($user->namalengkap); ?></h3>
                             <p><?= esc($user->username); ?></p>
+                            <!-- Edit profile link with an icon -->
                             <a href="/editprofilepelanggan" class="custom-link">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z" />
@@ -21,38 +25,45 @@
                                 </svg>
                             </a>
                         </div>
+                        <!-- User details -->
                         <div class="col-md-8">
                             <div class="card-body p-4">
-                                <h6>Informasi Pelanggan</h6>
+                                <h6>Customer Information</h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
+                                    <!-- Email information -->
                                     <div class="col-6 mb-3">
                                         <h6>Email</h6>
                                         <p class="text-muted"><?= esc($user->email); ?></p>
                                     </div>
+                                    <!-- Phone number information -->
                                     <div class="col-6 mb-3">
                                         <h6>Phone</h6>
                                         <p class="text-muted"><?= esc($user->nomorhp); ?></p>
                                     </div>
+                                    <!-- kWh number information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Nomor kWh</h6>
+                                        <h6>kWh Number</h6>
                                         <p class="text-muted"><?= esc($user->nomorkwh); ?></p>
                                     </div>
+                                    <!-- Address information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Alamat</h6>
+                                        <h6>Address</h6>
                                         <p class="text-muted"><?= esc($user->alamat); ?></p>
                                     </div>
                                 </div>
-                                <h6>Bayar Listrik</h6>
+                                <h6>Electricity Payment</h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
+                                    <!-- Electrical classification information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Golongan Listrik Rumah</h6>
+                                        <h6>Household Electricity Classification</h6>
                                         <p class="text-muted">R2/450VA</p>
                                     </div>
+                                    <!-- Payment status information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Status Tagihan</h6>
-                                        <p class="text-muted">Lunas untuk Bulan Juni</p>
+                                        <h6>Payment Status</h6>
+                                        <p class="text-muted">Paid for June</p>
                                     </div>
                                 </div>
                             </div>
@@ -65,4 +76,4 @@
 </section>
 
 <?= $this->endSection(); ?>
-<!-- ending declare content -->
+<!-- End of content section -->
