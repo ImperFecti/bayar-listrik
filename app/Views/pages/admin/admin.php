@@ -90,29 +90,37 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        DataTable Example
+                        Customer Data
                     </div>
                     <div class="card-body">
+                        <!-- Data table -->
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Name</th>
-                                    <th>Position</th>
-                                    <th>Office</th>
-                                    <th>Age</th>
-                                    <th>Start date</th>
-                                    <th>Salary</th>
+                                    <th>No</th>
+                                    <th>Username</th>
+                                    <th>Full Name</th>
+                                    <th>Email</th>
+                                    <th>Phone Number</th>
+                                    <th>Address</th>
+                                    <th>Role/Group</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>Tiger Nixon</td>
-                                    <td>System Architect</td>
-                                    <td>Edinburgh</td>
-                                    <td>61</td>
-                                    <td>2011/04/25</td>
-                                    <td>$320,800</td>
-                                </tr>
+                                <?php $no = 1;
+                                foreach ($result as $value) : ?>
+                                    <tr>
+                                        <td><?= $no++ ?></td>
+                                        <td><?= $value['username'] ?></td>
+                                        <td><?= $value['namalengkap'] ?></td>
+                                        <td><?= $value['email'] ?></td>
+                                        <td><?= $value['nomorhp'] ?></td>
+                                        <td><?= $value['alamat'] ?></td>
+                                        <td><?= $value['group_name'] ?></td>
+                                        <td></td>
+                                    </tr>
+                                <?php endforeach; ?>
                             </tbody>
                         </table>
                     </div>

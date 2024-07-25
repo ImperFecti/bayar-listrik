@@ -4,7 +4,7 @@ namespace App\Controllers;
 
 // Use necessary models and libraries
 use App\Models\PelangganModel;
-use Myth\Auth\Models\UserModel as MythUserModel;
+use Myth\Auth\Models\UserModel;
 
 class Pelanggan extends BaseController
 {
@@ -19,7 +19,14 @@ class Pelanggan extends BaseController
     // Method to display the profile of the logged-in customer
     public function profile()
     {
-        $data_user = $this->_user_model->findAll();
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id(); // Get the authenticated user's ID
+        $userModel = new UserModel();
+        $data_user = $userModel->find($userId);
         // dd($data_user);
         $data = [
             'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE',
@@ -33,9 +40,32 @@ class Pelanggan extends BaseController
     // Method to display the edit profile page
     public function editprofile()
     {
-        // Prepare data for the view
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id(); // Get the authenticated user's ID
+        $userModel = new UserModel();
+        $data_user = $userModel->find($userId);
+
+        if ($this->request->getMethod() === 'post') {
+            $data = [
+                'username' => $this->request->getPost('username'),
+                'namalengkap' => $this->request->getPost('namalengkap'),
+                'email' => $this->request->getPost('email'),
+                'nomorhp' => $this->request->getPost('nomorhp'),
+                'alamat' => $this->request->getPost('alamat')
+            ];
+
+            if ($userModel->update($userId, $data)) {
+                return redirect()->to('/profile')->with('success', 'Profile updated successfully');
+            }
+        }
+
         $data = [
-            'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE'
+            'title' => 'Edit Profile | PEMBAYARAN LISTRIK ONLINE',
+            'user' => $data_user
         ];
         // Return the view for editing the profile
         return view('pages/pelanggan/editprofile', $data);

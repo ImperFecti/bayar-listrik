@@ -17,13 +17,18 @@ class Admin extends BaseController
 
     public function index()
     {
-        return view('pages/admin/admin',);
+        $data_user = $this->_user_model->getUser();
+
+        $data = [
+            'title' => 'Data Pelanggan | PEMBAYARAN LISTRIK ONLINE',
+            'result' => $data_user
+        ];
+        return view('pages/admin/admin', $data);
     }
 
     public function tableuser()
     {
-        $data_user = $this->_user_model->getUsersWithGroup();
-
+        $data_user = $this->_user_model->getUser();
         $data = [
             'title' => 'Data Pelanggan | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_user

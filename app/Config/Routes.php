@@ -34,10 +34,7 @@ $routes->get('/tableuser', 'Admin::tableuser', ['filter' => 'role:admin']);
 $routes->get('/profile', 'Pelanggan::profile');
 
 // Route untuk halaman edit profil pelanggan
-$routes->get('/editprofilepelanggan', 'Pelanggan::editprofile');
-
-// Route untuk halaman edit profil pelanggan dengan metode GET dan POST
-$routes->match(['get', 'post'], '/editprofilepelanggan', 'Pelanggan::editprofile');
+$routes->get('/editprofile', 'Pelanggan::editprofile');
 
 // Route untuk halaman tagihan listrik (dengan filter role pelanggan)
 $routes->get('/tagihanlistrik', 'Pelanggan::tagihanlistrik', ['filter' => 'role:pelanggan']);
