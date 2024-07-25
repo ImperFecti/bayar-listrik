@@ -58,6 +58,7 @@
                             <!-- Links for logged-in users -->
                             <li><a class="dropdown-item" href="/profilepelanggan">Profile</a></li>
                             <li><a class="dropdown-item" href="/editprofilepelanggan">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="/editpassword">Ubah Password</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

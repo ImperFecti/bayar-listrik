@@ -28,7 +28,7 @@
                         <!-- User details -->
                         <div class="col-md-8">
                             <div class="card-body p-4">
-                                <h6>Customer Information</h6>
+                                <h6>Profile Pelanggan</h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
                                     <!-- Email information -->
@@ -38,32 +38,32 @@
                                     </div>
                                     <!-- Phone number information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Phone</h6>
+                                        <h6>Nomor Handphone</h6>
                                         <p class="text-muted"><?= esc($user->nomorhp); ?></p>
                                     </div>
                                     <!-- kWh number information -->
                                     <div class="col-6 mb-3">
-                                        <h6>kWh Number</h6>
+                                        <h6>Nomor kWh</h6>
                                         <p class="text-muted"><?= esc($user->nomorkwh); ?></p>
                                     </div>
                                     <!-- Address information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Address</h6>
+                                        <h6>Alamat Rumah</h6>
                                         <p class="text-muted"><?= esc($user->alamat); ?></p>
                                     </div>
                                 </div>
-                                <h6>Electricity Payment</h6>
+                                <h6>Status Listrik Rumah</h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
                                     <!-- Electrical classification information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Household Electricity Classification</h6>
+                                        <h6>Golongan Listrik Rumah</h6>
                                         <p class="text-muted">R2/450VA</p>
                                     </div>
                                     <!-- Payment status information -->
                                     <div class="col-6 mb-3">
-                                        <h6>Payment Status</h6>
-                                        <p class="text-muted">Paid for June</p>
+                                        <h6>Status pembayaran</h6>
+                                        <p class="text-muted">Terbayarkan Bulan Juni</p>
                                     </div>
                                 </div>
                             </div>

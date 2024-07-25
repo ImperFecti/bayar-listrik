@@ -1,12 +1,12 @@
 <!-- Import layout template -->
-<?= $this->extend('layout/adminlayout/bsadmintemplate'); ?>
+<?= $this->extend('adminlayout/template'); ?>
 
 <!-- Declare content section -->
 <?= $this->section('content'); ?>
 <div id="layoutSidenav">
 
     <!-- Include the sidebar for admin layout -->
-    <?= $this->include('layout/adminlayout/sidenavadmin'); ?>
+    <?= $this->include('adminlayout/sidenav'); ?>
 
     <div id="layoutSidenav_content">
         <main>
@@ -55,7 +55,7 @@
         </main>
 
         <!-- Import admin footer -->
-        <?= $this->include('layout/adminlayout/adminfooter'); ?>
+        <?= $this->include('adminlayout/footer'); ?>
 
     </div>
 </div>
