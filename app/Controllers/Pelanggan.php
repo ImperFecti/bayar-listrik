@@ -19,17 +19,11 @@ class Pelanggan extends BaseController
     // Method to display the profile of the logged-in customer
     public function profile()
     {
-        $userModel = new MythUserModel();
-
-        // Get the currently logged-in user's ID
-        $userId = user()->id;
-        // Fetch user data from the model
-        $user = $userModel->find($userId);
-
-        // Prepare data for the view
+        $data_user = $this->_user_model->findAll();
+        // dd($data_user);
         $data = [
             'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE',
-            'user' => $user
+            'result' => $data_user
         ];
 
         // Return the view with the user's profile data

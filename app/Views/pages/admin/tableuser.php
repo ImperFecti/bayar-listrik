@@ -31,6 +31,7 @@
                                     <th>Email</th>
                                     <th>Phone Number</th>
                                     <th>Address</th>
+                                    <th>Role/Group</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -44,6 +45,7 @@
                                         <td><?= $value['email'] ?></td>
                                         <td><?= $value['nomorhp'] ?></td>
                                         <td><?= $value['alamat'] ?></td>
+                                        <td><?= $value['group_name'] ?></td>
                                         <td></td>
                                     </tr>
                                 <?php endforeach; ?>

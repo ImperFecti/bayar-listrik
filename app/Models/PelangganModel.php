@@ -20,4 +20,22 @@ class PelangganModel extends Model
 
     // Define the fields that are allowed to be modified
     protected $allowedFields = ['username', 'namalengkap', 'nomorhp', 'alamat', 'email', 'active'];
+
+    public function getUser($id = false)
+    {
+        if ($id === false) {
+            return $this->select('users.id, users.namalengkap, users.username, users.email, users.nomorhp, users.alamat')
+                ->findAll();
+        } else {
+            return $this->where(['id' => $id])->first();
+        }
+    }
+
+    public function getUsersWithGroup()
+    {
+        return $this->select('users.id, users.username, users.namalengkap, users.email, users.nomorhp, users.alamat, auth_groups.name as group_name')
+            ->join('auth_groups_users', 'auth_groups_users.user_id = users.id')
+            ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id')
+            ->findAll();
+    }
 }
