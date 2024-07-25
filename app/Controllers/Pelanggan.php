@@ -2,10 +2,28 @@
 
 namespace App\Controllers;
 
+use App\Libraries\GroceryCrud;
 use Myth\Auth\Models\UserModel as MythUserModel;
 
 class Pelanggan extends BaseController
 {
+
+    public function index()
+    {
+
+        $crud = new GroceryCrud();
+        $crud->setLanguage('indonesian');
+        $crud->setTable('users');
+        $output = $crud->render();
+
+        $data = [
+            'title' => 'Data Pelanggan | PEMBAYARAN LISTRIK ONLINE',
+            'result' => $output
+        ];
+
+        return view('pages/admin/tableuser', $data);
+    }
+
     public function profilepelanggan()
     {
         $userModel = new MythUserModel();
