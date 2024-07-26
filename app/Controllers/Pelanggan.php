@@ -40,36 +40,41 @@ class Pelanggan extends BaseController
     // Method to display the edit profile page
     public function editprofile()
     {
-        $auth = service('authentication');
-        if (!$auth->check()) {
-            return redirect()->to('/login'); // Redirect to login if not authenticated
-        }
+        $data_user = $this->_user_model->getUser(user_id());
 
-        $userId = $auth->id(); // Get the authenticated user's ID
-        $userModel = new UserModel();
-        $data_user = $userModel->find($userId);
-
-        if ($this->request->getMethod() === 'post') {
-            $data = [
-                'username' => $this->request->getPost('username'),
-                'namalengkap' => $this->request->getPost('namalengkap'),
-                'email' => $this->request->getPost('email'),
-                'nomorhp' => $this->request->getPost('nomorhp'),
-                'alamat' => $this->request->getPost('alamat')
-            ];
-
-            if ($userModel->update($userId, $data)) {
-                return redirect()->to('/profile')->with('success', 'Profile updated successfully');
-            }
-        }
+        // dd($data_user);
 
         $data = [
             'title' => 'Edit Profile | PEMBAYARAN LISTRIK ONLINE',
-            'user' => $data_user
+            'result' => $data_user
+
+            // 'username' => $this->request->getPost('username'),
+            // 'namalengkap' => $this->request->getPost('namalengkap'),
+            // 'email' => $this->request->getPost('email'),
+            // 'nomorhp' => $this->request->getPost('nomorhp'),
+            // 'alamat' => $this->request->getPost('alamat')
         ];
+
+
         // Return the view for editing the profile
         return view('pages/pelanggan/editprofile', $data);
     }
+
+    public function updateprofile($id)
+    {
+        $this->_user_model->save([
+            'id' => $id,
+            'username' => $this->request->getPost('username'),
+            'namalengkap' => $this->request->getPost('namalengkap'),
+            'email' => $this->request->getPost('email'),
+            'nomorhp' => $this->request->getPost('nomorhp'),
+            'alamat' => $this->request->getPost('alamat')
+        ]);
+
+        session()->setFlashdata('success', 'Profile updated successfully');
+        return redirect()->to('/profile');
+    }
+
 
     // Method to display the electricity bill page
     public function tagihanlistrik()

@@ -7,15 +7,31 @@
 <!-- Profile page section -->
 <section class="vh-100" style="background-color: #f4f5f7;">
     <div class="container py-5 h-100">
+        <!-- Alert -->
+        <?php if (session()->getFlashdata('success')) : ?>
+            <div class="alert alert-success" role="alert">
+                <?= session()->getFlashdata('success') ?>
+            </div>
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('warning')) : ?>
+            <div class="alert alert-warning" role="alert">
+                <?= session()->getFlashdata('warning') ?>
+            </div>
+        <?php endif; ?>
+        <?php if (session()->getFlashdata('error')) : ?>
+            <div class="alert alert-danger" role="alert">
+                <?= session()->getFlashdata('error') ?>
+            </div>
+        <?php endif; ?>
+        <!-- End Alert -->
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-6 mb-4 mb-lg-0">
                 <!-- User profile card -->
                 <div class="card mb-3" style="border-radius: .5rem;">
                     <div class="row g-0">
                         <!-- Profile picture and basic info -->
-                        <div class="col-md-4 gradient-custom text-center text-white" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
-                            <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava1-bg.webp" alt="Avatar" class="img-fluid my-5" style="width: 80px;" />
-                            <h3><?= $result->namalengkap ?></h3>
+                        <div class="col-md-4 gradient-custom text-center text-white d-flex flex-column justify-content-center align-items-center" style="border-top-left-radius: .5rem; border-bottom-left-radius: .5rem;">
+                            <h3 class="mt-5"><?= $result->namalengkap ?></h3>
                             <p><?= $result->username ?></p>
                             <!-- Edit profile link with an icon -->
                             <a href="/editprofile" class="custom-link">
@@ -44,7 +60,7 @@
                                     <!-- kWh number information -->
                                     <div class="col-6 mb-3">
                                         <h6>Nomor kWh</h6>
-                                        <p class="text-muted">Nomor kWh</p>
+                                        <p class="text-muted"><?= $result->nomorkwh ?></p>
                                     </div>
                                     <!-- Address information -->
                                     <div class="col-6 mb-3">
