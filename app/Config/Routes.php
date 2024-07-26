@@ -37,6 +37,11 @@ $routes->get('/profile', 'Pelanggan::profile');
 $routes->get('/editprofile', 'Pelanggan::editprofile');
 $routes->post('/updateprofile/(:num)', 'Pelanggan::updateprofile/$1');
 
+$routes->get('/bayarlistrik', 'Pelanggan::bayarlistrik');
+// Update route untuk pembayaran listrik
+$routes->post('/bayar/(:num)', 'Pelanggan::bayar/$1');
+
+
 
 // Route untuk halaman tagihan listrik (dengan filter role pelanggan)
 $routes->get('/tagihanlistrik', 'Pelanggan::tagihanlistrik', ['filter' => 'role:pelanggan']);
