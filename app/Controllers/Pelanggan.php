@@ -68,7 +68,8 @@ class Pelanggan extends BaseController
             'namalengkap' => $this->request->getPost('namalengkap'),
             'email' => $this->request->getPost('email'),
             'nomorhp' => $this->request->getPost('nomorhp'),
-            'alamat' => $this->request->getPost('alamat')
+            'alamat' => $this->request->getPost('alamat'),
+            'nomorkwh' => $this->request->getPost('nomorkwh')
         ]);
 
         session()->setFlashdata('success', 'Profile updated successfully');

@@ -27,7 +27,7 @@
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="labels">Nomor Handphone</label>
-                            <input type="text" class="form-control" name="nomorhp" placeholder="" value="<?= $result['nomorhp'] ?>">
+                            <input type="number" class="form-control" name="nomorhp" placeholder="" value="<?= $result['nomorhp'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Alamat Rumah</label>
@@ -35,7 +35,7 @@
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Nomor kWh</label>
-                            <input type="text" class="form-control" name="nomorkwh" placeholder="" value="<?= $result['nomorkwh'] ?>">
+                            <input type="number" class="form-control" name="nomorkwh" placeholder="" value="<?= $result['nomorkwh'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Email</label>
