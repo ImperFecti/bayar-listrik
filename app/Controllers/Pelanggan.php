@@ -78,9 +78,19 @@ class Pelanggan extends BaseController
     // Method to display the electricity bill page
     public function tagihanlistrik()
     {
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id(); // Get the authenticated user's ID
+        $userModel = new UserModel();
+        $data_user = $userModel->find($userId);
+
         // Prepare data for the view
         $data = [
-            'title' => 'Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE'
+            'title' => 'Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
+            'result' => $data_user
         ];
         // Return the view for the electricity bill
         return view('pages/pelanggan/tagihanlistrik', $data);
@@ -96,9 +106,10 @@ class Pelanggan extends BaseController
         $userId = $auth->id(); // Get the authenticated user's ID
         $userModel = new UserModel();
         $data_user = $userModel->find($userId);
+
         $data = [
             'title' => 'Bayar Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
-            'result' => $data_user
+            'result' => $data_user,
         ];
 
         return view('pages/pelanggan/bayar', $data);

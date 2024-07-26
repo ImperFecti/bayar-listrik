@@ -27,8 +27,8 @@
                 <div class="row">
                     <div class="col-xl-8">
                         <ul class="list-unstyled">
-                            <li class="text-muted">To: <span style="color:#5d9fc5 ;">John Lorem</span></li>
-                            <li class="text-muted"><i class="fas fa-phone"></i> 123-456-789</li>
+                            <li class="text-muted">To: <span style="color:#5d9fc5 ;"><?= $result->namalengkap ?></span></li>
+                            <li class="text-muted"><i class="fas fa-phone"></i><?= $result->nomorhp ?></li>
                         </ul>
                     </div>
                     <div class="col-xl-4">
@@ -54,7 +54,7 @@
                         <tbody>
                             <tr>
                                 <td>Tagihan listrik R2/450VA - Rp. 750 per kWh </td>
-                                <td>4</td>
+                                <td>Januari</td>
                                 <td>2024</td>
                                 <td>11500</td>
                             </tr>

@@ -22,6 +22,7 @@ $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
 
 // Route untuk halaman tabel user (dengan filter role admin)
 $routes->get('/tableuser', 'Admin::tableuser', ['filter' => 'role:admin']);
+$routes->get('/tablebayar', 'Admin::tablebayar', ['filter' => 'role:admin']);
 
 
 

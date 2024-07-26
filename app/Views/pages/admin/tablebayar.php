@@ -11,14 +11,14 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Data Tagihan Pelanggan</h1>
+                <h1 class="mt-4">Customer Data</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Tagihan Listrik Pelanggan</li>
+                    <li class="breadcrumb-item active">Personal Information of Customer Data</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Data Bayar
+                        Customer Data
                     </div>
                     <div class="card-body">
                         <!-- Data table -->
@@ -26,12 +26,11 @@
                             <thead>
                                 <tr>
                                     <th>No</th>
-                                    <th>Username</th>
-                                    <th>Full Name</th>
-                                    <th>Email</th>
-                                    <th>Phone Number</th>
-                                    <th>Address</th>
-                                    <th>Role/Group</th>
+                                    <th>ID Pelanggan</th>
+                                    <th>Bulan</th>
+                                    <th>Tahun</th>
+                                    <th>Meter Awal</th>
+                                    <th>Meter Akhir</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -40,12 +39,11 @@
                                 foreach ($result as $value) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $value['username'] ?></td>
-                                        <td><?= $value['namalengkap'] ?></td>
-                                        <td><?= $value['email'] ?></td>
-                                        <td><?= $value['nomorhp'] ?></td>
-                                        <td><?= $value['alamat'] ?></td>
-                                        <td><?= $value['group_name'] ?></td>
+                                        <td><?= $value['id_users'] ?></td>
+                                        <td><?= $value['bulan'] ?></td>
+                                        <td><?= $value['tahun'] ?></td>
+                                        <td><?= $value['meter_awal'] ?></td>
+                                        <td><?= $value['meter_akhir'] ?></td>
                                         <td></td>
                                     </tr>
                                 <?php endforeach; ?>
