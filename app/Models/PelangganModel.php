@@ -19,7 +19,7 @@ class PelangganModel extends Model
     protected $useSoftDeletes = true;
 
     // Define the fields that are allowed to be modified
-    protected $allowedFields = ['username', 'namalengkap', 'nomorhp', 'alamat', 'email', 'active', 'nomorkwh'];
+    protected $allowedFields = ['username', 'namalengkap', 'nomorhp', 'alamat', 'email', 'active', 'nomorkwh', 'password_hash'];
 
     public function getUser($id = false)
     {

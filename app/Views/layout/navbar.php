@@ -42,6 +42,12 @@
                     </li>
                 <?php endif; ?>
 
+                <?php if (in_groups("pelanggan")) : ?>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/bayarlistrik">Bayar Tagihan</a>
+                    </li>
+                <?php endif; ?>
+
                 <!-- User dropdown menu -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -58,7 +64,7 @@
                             <!-- Links for logged-in users -->
                             <li><a class="dropdown-item" href="/profile">Profile</a></li>
                             <li><a class="dropdown-item" href="/editprofile">Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Ubah Password</a></li>
+                            <li><a class="dropdown-item" href="/ubahpassword">Ubah Password</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

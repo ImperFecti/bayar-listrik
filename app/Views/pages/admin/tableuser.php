@@ -13,7 +13,7 @@
             <div class="container-fluid px-4">
                 <h1 class="mt-4">Data Tagihan Pelanggan</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Tagihan Listrik Pelanggan</li>
+                    <li class="breadcrumb-item active">Pelanggan Yang Terdaftar Di Database</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">

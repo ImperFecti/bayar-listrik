@@ -7,6 +7,7 @@ namespace App\Controllers;
 use App\Models\PenggunaanModel;
 use App\Models\PelangganModel;
 use Myth\Auth\Models\UserModel;
+use Myth\Auth\Password;
 
 class Pelanggan extends BaseController
 {
@@ -72,6 +73,47 @@ class Pelanggan extends BaseController
 
         session()->setFlashdata('success', 'Profile updated successfully');
         return redirect()->to('/profile');
+    }
+
+    public function ubahpassword()
+    {
+        $data_user = $this->_user_model->getUser(user_id());
+
+        $data = [
+            'title' => 'Ubah Password | PEMBAYARAN LISTRIK ONLINE',
+            'result' => $data_user
+        ];
+
+        return view('pages/pelanggan/ubahpassword', $data);
+    }
+
+    public function updatepassword($id)
+    {
+
+        $rules = [
+            'password' => 'required',
+            'new_password' => 'required',
+            'confirm_password' => 'required|matches[new_password]'
+        ];
+
+        if (!$this->validate($rules)) {
+            return redirect()->to('/ubahpassword')->withInput();
+        }
+
+        $userModel = new UserModel();
+        $user = $userModel->find($id);
+        $currentPassword = $this->request->getVar('password');
+
+        if (!Password::verify($currentPassword, $user->password_hash)) {
+            return redirect()->to('/ubahpassword')->with('error', 'Password lama salah');
+        }
+
+        // Update password
+        $newPassword = Password::hash($this->request->getVar('new_password'));
+        $userModel->update($id, ['password_hash' => $newPassword]);
+
+        session()->setFlashdata('success', 'Password updated successfully');
+        return redirect()->to('/ubahpassword');
     }
 
 

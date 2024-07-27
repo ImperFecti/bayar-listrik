@@ -34,6 +34,9 @@ $routes->get('/tablebayar', 'Admin::tablebayar', ['filter' => 'role:admin']);
 // Route untuk halaman profil pelanggan
 $routes->get('/profile', 'Pelanggan::profile');
 
+$routes->get('/ubahpassword', 'Pelanggan::ubahpassword');
+$routes->post('/updatepassword/(:num)', 'Pelanggan::updatepassword/$1');
+
 // Route untuk halaman edit profil pelanggan
 $routes->get('/editprofile', 'Pelanggan::editprofile');
 $routes->post('/updateprofile/(:num)', 'Pelanggan::updateprofile/$1');

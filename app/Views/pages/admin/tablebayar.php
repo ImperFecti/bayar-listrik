@@ -11,9 +11,9 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Customer Data</h1>
+                <h1 class="mt-4">Tagihan Pelanggan</h1>
                 <ol class="breadcrumb mb-4">
-                    <li class="breadcrumb-item active">Personal Information of Customer Data</li>
+                    <li class="breadcrumb-item active">List Tagihan Listrik Pelanggan</li>
                 </ol>
                 <div class="card mb-4">
                     <div class="card-header">
