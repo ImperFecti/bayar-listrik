@@ -32,4 +32,10 @@ class PelangganModel extends Model
             return $this->where(['id' => $id])->first();
         }
     }
+
+    // Metode untuk menghapus user
+    public function deleteUser($id)
+    {
+        return $this->delete($id);
+    }
 }

@@ -48,6 +48,19 @@ class Admin extends BaseController
         return view('pages/admin/tableuser', $data);
     }
 
+    // Fungsi untuk menghapus user
+    public function deleteUser($id)
+    {
+        // Check if the user exists
+        $user = $this->_user_model->find($id);
+        if ($user) {
+            $this->_user_model->delete($id);
+            return redirect()->to('/tableuser')->with('message', 'User berhasil dihapus.');
+        } else {
+            return redirect()->to('/tableuser')->with('error', 'User tidak ditemukan.');
+        }
+    }
+
     public function tablebayar()
     {
         $data_bayar = $this->penggunaanModel->getBayar();

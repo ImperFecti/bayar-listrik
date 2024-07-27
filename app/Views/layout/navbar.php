@@ -72,6 +72,7 @@
                         <?php else : ?>
                             <!-- Link for users not logged in -->
                             <li><a class="dropdown-item" href="/login">Login</a></li>
+                            <li><a class="dropdown-item" href="/register">Register</a></li>
                         <?php endif; ?>
                     </ul>
                 </li>
