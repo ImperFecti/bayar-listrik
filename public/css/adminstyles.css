@@ -91,6 +91,17 @@
   }
 }
 
+.custom-link {
+  color: black;
+  text-decoration: none;
+}
+
+.dashboard:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  background: #e0e0e0; /* Optional: Change background color on hover */
+}
+
 body {
   margin: 0;
   font-family: var(--bs-body-font-family);

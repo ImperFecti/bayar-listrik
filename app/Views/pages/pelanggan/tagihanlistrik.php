@@ -4,7 +4,7 @@
 <!-- declare content -->
 <?= $this->section('content'); ?>
 
-<div class="card">
+<div class="card fade-in">
     <div class="card-body">
         <div class="container mb-5 mt-3">
             <div class="row d-flex align-items-baseline">

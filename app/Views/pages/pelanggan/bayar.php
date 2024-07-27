@@ -4,7 +4,7 @@
 <!-- declare content -->
 <?= $this->section('content'); ?>
 
-<div class="container rounded bg-white mt-5 mb-5">
+<div class="container rounded bg-white mt-5 mb-5 fade-in">
     <div class="row justify-content-center">
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">

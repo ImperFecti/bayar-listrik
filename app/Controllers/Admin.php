@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\PelangganModel;
 use App\Models\PenggunaanModel;
+use Myth\Auth\Models\UserModel;
 use App\Controllers\BaseController;
 
 class Admin extends BaseController
@@ -20,10 +21,17 @@ class Admin extends BaseController
 
     public function index()
     {
-        $data_user = $this->_user_model->getUser();
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id(); // Get the authenticated user's ID
+        $userModel = new UserModel();
+        $data_user = $userModel->find($userId);
 
         $data = [
-            'title' => 'Data Pelanggan | PEMBAYARAN LISTRIK ONLINE',
+            'title' => 'Dashboard Admin | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_user
         ];
         return view('pages/admin/admin', $data);
@@ -33,7 +41,7 @@ class Admin extends BaseController
     {
         $data_user = $this->_user_model->getUser();
         $data = [
-            'title' => 'Data Pelanggan | PEMBAYARAN LISTRIK ONLINE',
+            'title' => 'Data Tabel Pelanggan | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_user
         ];
 
@@ -45,7 +53,7 @@ class Admin extends BaseController
         $data_bayar = $this->penggunaanModel->getBayar();
 
         $data = [
-            'title' => 'Data Pembayaran | PEMBAYARAN LISTRIK ONLINE',
+            'title' => 'Data Tagihan Pelanggan | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_bayar
         ];
 

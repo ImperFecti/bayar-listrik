@@ -3,7 +3,6 @@
         <div class="sb-sidenav-menu">
             <div class="nav">
                 <!-- Core Section Start -->
-                <div class="sb-sidenav-menu-heading">Core</div>
                 <!-- Link to Home page -->
                 <a class="nav-link" href="/">
                     <div class="sb-nav-link-icon"><i class="fa-solid fa-house"></i></div>
