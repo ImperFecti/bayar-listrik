@@ -12,13 +12,14 @@ class Admin extends BaseController
     private $_user_model;
     private $penggunaanModel;
 
-    // Constructor to initialize the PelangganModel
+    // Constructor to initialize the models
     public function __construct()
     {
         $this->_user_model = new PelangganModel();
         $this->penggunaanModel = new PenggunaanModel();
     }
 
+    // Method to display the admin dashboard
     public function index()
     {
         $auth = service('authentication');
@@ -37,6 +38,7 @@ class Admin extends BaseController
         return view('pages/admin/admin', $data);
     }
 
+    // Method to display the user table
     public function tableuser()
     {
         $data_user = $this->_user_model->getUser();
@@ -48,7 +50,7 @@ class Admin extends BaseController
         return view('pages/admin/tableuser', $data);
     }
 
-    // Fungsi untuk menghapus user
+    // Method to delete a user
     public function deleteUser($id)
     {
         // Check if the user exists
@@ -57,10 +59,11 @@ class Admin extends BaseController
             $this->_user_model->delete($id);
             return redirect()->to('/tableuser')->with('message', 'User berhasil dihapus.');
         } else {
-            return redirect()->to('/tableuser')->with('error', 'User tidak ditemukan.');
+            return redirect()->to('/tableuser')->with('error', 'Data tidak ditemukan.');
         }
     }
 
+    // Method to display the bill table
     public function tablebayar()
     {
         $data_bayar = $this->penggunaanModel->getBayar();
@@ -71,5 +74,19 @@ class Admin extends BaseController
         ];
 
         return view('pages/admin/tablebayar', $data);
+    }
+
+    // Method to delete a bill
+    public function deleteBayar($id)
+    {
+        // Check if the bill exists
+        $data_bayar = $this->penggunaanModel->getBayar();
+
+        if ($data_bayar) {
+            $this->penggunaanModel->delete($id);
+            return redirect()->to('/tablebayar')->with('message', 'Data tagihan berhasil dihapus.');
+        } else {
+            return redirect()->to('/tablebayar')->with('error', 'Data tidak ditemukan.');
+        }
     }
 }

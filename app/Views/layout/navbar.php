@@ -2,7 +2,9 @@
 <nav class="navbar sticky-top navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
         <!-- Brand/logo and website name -->
-        <a class="navbar-brand" href="/"><img src="https://info-ambon.com/wp-content/uploads/2019/07/LOGO-PLN.png" alt="PLN Logo" draggable="false" height="30" /></a>
+        <a class="navbar-brand" href="/">
+            <img src="https://info-ambon.com/wp-content/uploads/2019/07/LOGO-PLN.png" alt="PLN Logo" draggable="false" height="30" />
+        </a>
         WEBSITE BAYAR LISTRIK ONLINE
 
         <!-- Toggler button for responsive navbar -->
@@ -42,6 +44,7 @@
                     </li>
                 <?php endif; ?>
 
+                <!-- Payment page link visible to users in the 'pelanggan' group -->
                 <?php if (in_groups("pelanggan")) : ?>
                     <li class="nav-item">
                         <a class="nav-link" href="/bayarlistrik">Bayar Tagihan</a>
@@ -70,7 +73,7 @@
                             </li>
                             <li><a class="dropdown-item" href="/logout">Logout</a></li>
                         <?php else : ?>
-                            <!-- Link for users not logged in -->
+                            <!-- Links for users not logged in -->
                             <li><a class="dropdown-item" href="/login">Login</a></li>
                             <li><a class="dropdown-item" href="/register">Register</a></li>
                         <?php endif; ?>

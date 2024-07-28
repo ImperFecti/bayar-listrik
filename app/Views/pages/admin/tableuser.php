@@ -15,11 +15,13 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Pelanggan Yang Terdaftar Di Database</li>
                 </ol>
+                <!-- Display success message if exists -->
                 <?php if (session()->getFlashdata('message')) : ?>
                     <div class="alert alert-success">
                         <?= session()->getFlashdata('message') ?>
                     </div>
                 <?php endif; ?>
+                <!-- Display error message if exists -->
                 <?php if (session()->getFlashdata('error')) : ?>
                     <div class="alert alert-danger">
                         <?= session()->getFlashdata('error') ?>
@@ -46,6 +48,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- Loop through each user and display their data -->
                                 <?php $no = 1;
                                 foreach ($result as $value) : ?>
                                     <tr>
@@ -57,12 +60,12 @@
                                         <td><?= $value['alamat'] ?></td>
                                         <td><?= $value['group_name'] ?></td>
                                         <td>
+                                            <!-- Form to delete user -->
                                             <form action="<?= site_url('admin/deleteUser/' . $value['id']) ?>" method="post" style="display:inline;">
                                                 <?= csrf_field() ?>
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
                                             </form>
                                         </td>
-
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

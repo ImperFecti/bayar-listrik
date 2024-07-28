@@ -1,8 +1,10 @@
+// Ensure the page scrolls to the top when the user navigates away
 window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 };
 
 document.addEventListener("DOMContentLoaded", function () {
+  // Select form elements
   const form = document.getElementById("calculator-form");
   const dailyUsageInput = document.getElementById("daily-usage");
   const dailyKwhSpan = document.getElementById("daily-kwh");
@@ -12,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const calculateBtn = document.getElementById("calculate-btn");
   const resetBtn = document.getElementById("reset-btn");
 
+  // Function to escape HTML characters to prevent XSS attacks
   function escapeHtml(text) {
     const map = {
       "&": "&amp;",
@@ -25,6 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Function to update the tariff calculations based on user input
   function updateCalculations() {
     const dailyUsage = parseFloat(dailyUsageInput.value) || 0;
     const kwh = dailyUsage / 1000;
@@ -40,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
     )}`;
   }
 
+  // Function to reset all form fields
   function resetFields() {
     dailyUsageInput.value = "";
     dailyKwhSpan.textContent = "0";
@@ -48,6 +53,7 @@ document.addEventListener("DOMContentLoaded", function () {
     golonganSelect.selectedIndex = 0;
   }
 
+  // Event listener to handle the calculate button click
   calculateBtn.addEventListener("click", function () {
     if (form.checkValidity()) {
       updateCalculations();
@@ -56,13 +62,15 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
+  // Event listener to handle the reset button click
   resetBtn.addEventListener("click", resetFields);
 });
 
-// JavaScript for fade in effect on scroll
+// JavaScript for fade-in effect on scroll
 document.addEventListener("DOMContentLoaded", function () {
   const elements = document.querySelectorAll(".fade-in");
 
+  // Function to check if elements should fade in based on scroll position
   function checkFadeIn() {
     const triggerHeight = window.innerHeight * 0.75;
 
@@ -77,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // Add scroll event listener to check for fade-in effect
   window.addEventListener("scroll", checkFadeIn);
   checkFadeIn(); // Initial check in case elements are already in view
 });

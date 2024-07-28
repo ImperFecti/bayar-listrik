@@ -15,6 +15,18 @@
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">List Tagihan Listrik Pelanggan</li>
                 </ol>
+                <!-- Display success message if exists -->
+                <?php if (session()->getFlashdata('message')) : ?>
+                    <div class="alert alert-success">
+                        <?= session()->getFlashdata('message') ?>
+                    </div>
+                <?php endif; ?>
+                <!-- Display error message if exists -->
+                <?php if (session()->getFlashdata('error')) : ?>
+                    <div class="alert alert-danger">
+                        <?= session()->getFlashdata('error') ?>
+                    </div>
+                <?php endif; ?>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
@@ -35,6 +47,7 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <!-- Loop through each bill and display its data -->
                                 <?php $no = 1;
                                 foreach ($result as $value) : ?>
                                     <tr>
@@ -44,7 +57,13 @@
                                         <td><?= $value['tahun'] ?></td>
                                         <td><?= $value['meter_awal'] ?></td>
                                         <td><?= $value['meter_akhir'] ?></td>
-                                        <td></td>
+                                        <td>
+                                            <!-- Form to delete bill -->
+                                            <form action="<?= site_url('admin/deleteBayar/' . $value['id']) ?>" method="post" style="display:inline;">
+                                                <?= csrf_field() ?>
+                                                <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data tagihan ini?')">Delete</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                 <?php endforeach; ?>
                             </tbody>

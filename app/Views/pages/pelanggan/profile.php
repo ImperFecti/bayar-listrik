@@ -24,6 +24,7 @@
             </div>
         <?php endif; ?>
         <!-- End Alert -->
+
         <div class="row d-flex justify-content-center align-items-center h-100">
             <div class="col col-lg-6 mb-4 mb-lg-0">
                 <!-- User profile card -->
@@ -86,6 +87,7 @@
                         </div>
                     </div>
                 </div>
+                <!-- End of user profile card -->
             </div>
         </div>
     </div>
