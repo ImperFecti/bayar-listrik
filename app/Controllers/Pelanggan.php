@@ -126,17 +126,54 @@ class Pelanggan extends BaseController
         }
 
         $userId = $auth->id(); // Get the authenticated user's ID
-        $userModel = new UserModel();
-        $data_user = $userModel->find($userId);
 
-        // Prepare data for the view
+        // Ambil data tagihan dari model
+        $tagihan = $this->penggunaanModel->getTagihanByUserId($userId);
+
+        // Siapkan data untuk dikirim ke view
         $data = [
             'title' => 'Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
-            'result' => $data_user
+            'tagihan' => $tagihan
         ];
+
         // Return the view for the electricity bill
         return view('pages/pelanggan/tagihanlistrik', $data);
     }
+
+
+    public function buktitagihan($id)
+    {
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id(); // Get the authenticated user's ID
+
+        // Ambil data tagihan berdasarkan ID tagihan
+        $tagihan = $this->penggunaanModel->find($id);
+
+        if ($tagihan['id_users'] != $userId) {
+            return redirect()->to('/tagihanlistrik')->with('error', 'Access denied.');
+        }
+
+        $userModel = new UserModel();
+        $data_user = $userModel->find($tagihan['id_users']);
+
+        // Siapkan data untuk dikirim ke view
+        $data = [
+            'title' => 'Bukti Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
+            'tagihan' => $tagihan,
+            'result' => $data_user
+        ];
+
+        // dd($tagihan);
+
+        // Return the view for the electricity bill
+        return view('pages/pelanggan/buktitagihan', $data);
+    }
+
+
 
     public function bayarlistrik()
     {

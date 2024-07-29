@@ -48,3 +48,4 @@ $routes->post('/bayar/(:num)', 'Pelanggan::bayar/$1');
 
 // Route untuk halaman tagihan listrik (dengan filter role pelanggan)
 $routes->get('/tagihanlistrik', 'Pelanggan::tagihanlistrik', ['filter' => 'role:pelanggan']);
+$routes->get('/buktitagihan/(:num)', 'Pelanggan::buktitagihan/$1', ['filter' => 'role:pelanggan']);

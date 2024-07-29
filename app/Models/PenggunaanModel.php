@@ -20,4 +20,9 @@ class PenggunaanModel extends Model
             return $this->where(['id' => $id])->first();
         }
     }
+
+    public function getTagihanByUserId($userId)
+    {
+        return $this->where('id_users', $userId)->findAll();
+    }
 }
