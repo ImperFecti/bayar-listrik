@@ -11,7 +11,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Data Tagihan Pelanggan</h1>
+                <h1 class="mt-4">Data Akun Pelanggan</h1>
                 <ol class="breadcrumb mb-4">
                     <li class="breadcrumb-item active">Pelanggan Yang Terdaftar Di Database</li>
                 </ol>
@@ -81,6 +81,45 @@
                                             </button>
                                         </td>
                                     </tr>
+                                    <!-- Edit User Modal -->
+                                    <div class="modal fade" id="editUserModal<?= $value['id'] ?>" tabindex="-1" aria-labelledby="editUserModalLabel<?= $value['id'] ?>" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <form action="<?= site_url('admin/ubahpelanggan/' . $value['id']) ?>" method="post">
+                                                    <?= csrf_field() ?>
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="editUserModalLabel<?= $value['id'] ?>">Ubah Data User</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <div class="mb-3">
+                                                            <label for="username<?= $value['id'] ?>" class="form-label">Username</label>
+                                                            <input type="text" class="form-control" id="username<?= $value['id'] ?>" name="username" value="<?= $value['username'] ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="namalengkap<?= $value['id'] ?>" class="form-label">Nama Lengkap</label>
+                                                            <input type="text" class="form-control" id="namalengkap<?= $value['id'] ?>" name="namalengkap" value="<?= $value['namalengkap'] ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="email<?= $value['id'] ?>" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email<?= $value['id'] ?>" name="email" value="<?= $value['email'] ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="nomorhp<?= $value['id'] ?>" class="form-label">Nomor HP</label>
+                                                            <input type="text" class="form-control" id="nomorhp<?= $value['id'] ?>" name="nomorhp" value="<?= $value['nomorhp'] ?>" required>
+                                                        </div>
+                                                        <div class="mb-3">
+                                                            <label for="alamat<?= $value['id'] ?>" class="form-label">Alamat</label>
+                                                            <input type="text" class="form-control" id="alamat<?= $value['id'] ?>" name="alamat" value="<?= $value['alamat'] ?>" required>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                            <button type="submit" class="btn btn-primary">Save changes</button>
+                                                        </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                    </div>
                                 <?php endforeach; ?>
                             </tbody>
                         </table>
@@ -92,46 +131,6 @@
         <!-- Import admin footer -->
         <?= $this->include('adminlayout/footer'); ?>
 
-    </div>
-</div>
-
-<!-- Edit User Modal -->
-<div class="modal fade" id="editUserModal<?= $value['id'] ?>" tabindex="-1" aria-labelledby="editUserModalLabel<?= $value['id'] ?>" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <form action="<?= site_url('admin/ubahpelanggan/' . $value['id']) ?>" method="post">
-                <?= csrf_field() ?>
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editUserModalLabel<?= $value['id'] ?>">Ubah Data User</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="username<?= $value['id'] ?>" class="form-label">Username</label>
-                        <input type="text" class="form-control" id="username<?= $value['id'] ?>" name="username" value="<?= $value['username'] ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="namalengkap<?= $value['id'] ?>" class="form-label">Nama Lengkap</label>
-                        <input type="text" class="form-control" id="namalengkap<?= $value['id'] ?>" name="namalengkap" value="<?= $value['namalengkap'] ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="email<?= $value['id'] ?>" class="form-label">Email</label>
-                        <input type="email" class="form-control" id="email<?= $value['id'] ?>" name="email" value="<?= $value['email'] ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="nomorhp<?= $value['id'] ?>" class="form-label">Nomor HP</label>
-                        <input type="text" class="form-control" id="nomorhp<?= $value['id'] ?>" name="nomorhp" value="<?= $value['nomorhp'] ?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="alamat<?= $value['id'] ?>" class="form-label">Alamat</label>
-                        <input type="text" class="form-control" id="alamat<?= $value['id'] ?>" name="alamat" value="<?= $value['alamat'] ?>" required>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save changes</button>
-                    </div>
-            </form>
-        </div>
     </div>
 </div>
 

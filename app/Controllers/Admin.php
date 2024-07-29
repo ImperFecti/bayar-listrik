@@ -109,6 +109,37 @@ class Admin extends BaseController
         return view('pages/admin/tablebayar', $data);
     }
 
+    public function tambahbayar()
+    {
+        $data = [
+            'id_users' => $this->request->getPost('id_users'),
+            'bulan' => $this->request->getPost('bulan'),
+            'tahun' => $this->request->getPost('tahun'),
+            'meter_awal' => $this->request->getPost('meter_awal'),
+            'meter_akhir' => $this->request->getPost('meter_akhir'),
+        ];
+
+        $this->penggunaanModel->insert($data);
+
+        return redirect()->to('/tablebayar')->with('message', 'Data tagihan berhasil ditambahkan.');
+    }
+
+    public function ubahbayar($id)
+    {
+        $data = [
+            'id_users' => $this->request->getPost('id_users'),
+            'bulan' => $this->request->getPost('bulan'),
+            'tahun' => $this->request->getPost('tahun'),
+            'meter_awal' => $this->request->getPost('meter_awal'),
+            'meter_akhir' => $this->request->getPost('meter_akhir'),
+        ];
+
+        $this->penggunaanModel->update($id, $data);
+
+        return redirect()->to('/tablebayar')->with('message', 'Data tagihan berhasil diubah.');
+    }
+
+
     // Method to delete a bill
     public function deleteBayar($id)
     {
