@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\PelangganModel;
 use App\Models\PenggunaanModel;
 use Myth\Auth\Models\UserModel;
+use Myth\Auth\Password;
 use App\Controllers\BaseController;
 
 class Admin extends BaseController
@@ -48,6 +49,38 @@ class Admin extends BaseController
         ];
 
         return view('pages/admin/tableuser', $data);
+    }
+
+    // Method to add a new user
+    public function tambahpelanggan()
+    {
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'namalengkap' => $this->request->getPost('namalengkap'),
+            'email' => $this->request->getPost('email'),
+            'password_hash' => Password::hash($this->request->getPost('password')),
+            'nomorhp' => $this->request->getPost('nomorhp'),
+            'alamat' => $this->request->getPost('alamat'),
+            'group_name' => $this->request->getPost('group_name'),
+            'active' => 1, // Assuming you want the user to be active by default
+        ];
+
+        $this->_user_model->insert($data);
+        return redirect()->to('/tableuser')->with('message', 'User berhasil ditambahkan.');
+    }
+
+    public function ubahpelanggan($id)
+    {
+        $data = [
+            'username' => $this->request->getPost('username'),
+            'namalengkap' => $this->request->getPost('namalengkap'),
+            'email' => $this->request->getPost('email'),
+            'nomorhp' => $this->request->getPost('nomorhp'),
+            'alamat' => $this->request->getPost('alamat'),
+        ];
+
+        $this->_user_model->update($id, $data);
+        return redirect()->to('/tableuser')->with('message', 'User berhasil diubah.');
     }
 
     // Method to delete a user

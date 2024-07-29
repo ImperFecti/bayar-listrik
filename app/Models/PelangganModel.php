@@ -16,7 +16,7 @@ class PelangganModel extends Model
     protected $useTimestamps = true;
 
     // Enable soft deletes (records are not actually removed from the database)
-    protected $useSoftDeletes = true;
+    protected $useSoftDeletes = false;
 
     // Define the fields that are allowed to be modified
     protected $allowedFields = ['username', 'namalengkap', 'nomorhp', 'alamat', 'email', 'active', 'nomorkwh', 'password_hash'];

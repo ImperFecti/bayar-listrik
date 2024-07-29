@@ -19,15 +19,12 @@ $routes->get('/kalkulator', 'Home::kalkulator');
 
 // Route untuk halaman admin (dengan filter role admin)
 $routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->post('admin/tambahpelanggan', 'Admin::tambahpelanggan', ['filter' => 'role:admin']);
+$routes->post('admin/ubahpelanggan/(:num)', 'Admin::ubahpelanggan/$1');
 
 // Route untuk halaman tabel user (dengan filter role admin)
 $routes->get('/tableuser', 'Admin::tableuser', ['filter' => 'role:admin']);
 $routes->get('/tablebayar', 'Admin::tablebayar', ['filter' => 'role:admin']);
-
-
-
-// Route contoh yang di-comment
-// $routes->get('/example', 'Pelanggan::index');
 
 
 
