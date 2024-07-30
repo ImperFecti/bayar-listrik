@@ -54,6 +54,8 @@ class Admin extends BaseController
     // Method to add a new user
     public function tambahpelanggan()
     {
+        $authorize = service('authorization');
+
         $data = [
             'username' => $this->request->getPost('username'),
             'namalengkap' => $this->request->getPost('namalengkap'),
@@ -61,13 +63,21 @@ class Admin extends BaseController
             'password_hash' => Password::hash($this->request->getPost('password')),
             'nomorhp' => $this->request->getPost('nomorhp'),
             'alamat' => $this->request->getPost('alamat'),
-            'group_name' => $this->request->getPost('group_name'),
             'active' => 1, // Assuming you want the user to be active by default
         ];
 
-        $this->_user_model->insert($data);
+        // Insert user and get the user ID
+        $userModel = new UserModel();
+        $userId = $userModel->insert($data, true); // The second parameter 'true' returns the insert ID
+
+        // Assign default user group
+        if ($userId) {
+            $authorize->addUserToGroup($userId, config('Auth')->defaultUserGroup);
+        }
+
         return redirect()->to('/tableuser')->with('message', 'User berhasil ditambahkan.');
     }
+
 
     public function ubahpelanggan($id)
     {
