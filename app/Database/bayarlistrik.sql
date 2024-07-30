@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 28, 2024 at 08:30 AM
+-- Generation Time: Jul 30, 2024 at 03:31 PM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -93,8 +93,9 @@ CREATE TABLE `auth_groups_users` (
 
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 3),
-(2, 1),
-(2, 2);
+(2, 15),
+(2, 16),
+(2, 17);
 
 -- --------------------------------------------------------
 
@@ -147,10 +148,59 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (29, '::1', 'admin@gmail.com', 3, '2024-07-26 17:45:47', 1),
 (30, '::1', 'adilm8909@gmail.com', 1, '2024-07-26 18:37:56', 1),
 (31, '::1', 'admin@gmail.com', 3, '2024-07-26 21:38:53', 1),
-(32, '::1', 'admin@gmail.com', 3, '2024-07-28 05:33:49', 1),
-(33, '::1', 'apaanwoy45@gmail.com', 2, '2024-07-28 05:44:18', 1),
-(34, '::1', 'admin@gmail.com', 3, '2024-07-28 06:09:50', 1),
-(35, '::1', 'apaanwoy45@gmail.com', 2, '2024-07-28 06:27:26', 1);
+(32, '::1', 'apaanwoy45@gmail.com', 2, '2024-07-27 06:26:28', 1),
+(33, '::1', 'apaanwoy45@gmail.com', 2, '2024-07-27 08:09:05', 1),
+(34, '::1', 'adilsputra', NULL, '2024-07-27 08:43:07', 0),
+(35, '::1', 'adilsaputra', NULL, '2024-07-27 08:43:14', 0),
+(36, '::1', 'apaanwoy45@gmail.com', 2, '2024-07-27 08:43:24', 1),
+(37, '::1', 'admin@gmail.com', 3, '2024-07-27 10:40:30', 1),
+(38, '::1', 'admin@gmail.com', 3, '2024-07-27 16:34:50', 1),
+(39, '::1', 'test@gmail.com', 4, '2024-07-27 17:00:01', 1),
+(40, '::1', 'admin@gmail.com', 3, '2024-07-27 17:01:08', 1),
+(41, '::1', 'testing', NULL, '2024-07-27 17:02:50', 0),
+(42, '::1', 'admin@gmail.com', 3, '2024-07-27 19:53:42', 1),
+(43, '::1', 'admin@gmail.com', 3, '2024-07-27 20:35:57', 1),
+(44, '::1', 'admin@gmail.com', 3, '2024-07-27 20:43:43', 1),
+(45, '::1', 'admin@gmail.com', 3, '2024-07-27 20:47:16', 1),
+(46, '::1', 'adilsputra', NULL, '2024-07-28 16:18:46', 0),
+(47, '::1', 'adilsputra', NULL, '2024-07-28 16:18:58', 0),
+(48, '::1', 'admin@gmail.com', 3, '2024-07-28 16:19:46', 1),
+(49, '::1', 'admin@gmail.com', 3, '2024-07-29 01:13:07', 1),
+(50, '::1', 'admin', NULL, '2024-07-29 01:15:26', 0),
+(51, '::1', 'admin@gmail.com', 3, '2024-07-29 01:15:37', 1),
+(52, '::1', 'adilsputra', NULL, '2024-07-29 02:11:19', 0),
+(53, '::1', 'adilsputra', NULL, '2024-07-29 02:11:33', 0),
+(54, '::1', 'admin', NULL, '2024-07-29 04:27:03', 0),
+(55, '::1', 'admin', NULL, '2024-07-29 04:27:11', 0),
+(56, '::1', 'admin@gmail.com', 3, '2024-07-29 04:27:19', 1),
+(57, '::1', 'adilsputra', NULL, '2024-07-29 05:01:23', 0),
+(58, '::1', 'Imperfecti', NULL, '2024-07-29 05:01:44', 0),
+(59, '::1', 'testing@gmail.com', 8, '2024-07-29 05:02:49', 1),
+(60, '::1', 'admin', NULL, '2024-07-29 06:04:16', 0),
+(61, '::1', 'admin@gmail.com', 3, '2024-07-29 06:05:04', 1),
+(62, '::1', 'adilm8909@gmail.com', 12, '2024-07-29 09:44:50', 1),
+(63, '::1', 'admin@gmail.com', 3, '2024-07-29 09:45:51', 1),
+(64, '::1', 'adilsputra', NULL, '2024-07-30 01:24:10', 0),
+(65, '::1', 'adilsputra', NULL, '2024-07-30 01:24:18', 0),
+(66, '::1', 'adilsputra', NULL, '2024-07-30 01:24:37', 0),
+(67, '::1', 'ImperFecti', NULL, '2024-07-30 01:25:02', 0),
+(68, '::1', 'imperfecti', NULL, '2024-07-30 01:25:13', 0),
+(69, '::1', 'admin', NULL, '2024-07-30 01:25:23', 0),
+(70, '::1', 'admin', NULL, '2024-07-30 01:25:38', 0),
+(71, '::1', 'admin@gmail.com', 3, '2024-07-30 01:25:46', 1),
+(72, '::1', 'testing4@gmail.com', 16, '2024-07-30 02:06:36', 1),
+(73, '::1', 'admin', NULL, '2024-07-30 02:13:17', 0),
+(74, '::1', 'admin', NULL, '2024-07-30 02:13:25', 0),
+(75, '::1', 'admin@gmail.com', 3, '2024-07-30 02:13:33', 1),
+(76, '::1', 'testing4@gmail.com', 16, '2024-07-30 02:14:15', 1),
+(77, '::1', 'testing4@gmail.com', 16, '2024-07-30 03:42:52', 1),
+(78, '::1', 'admin', NULL, '2024-07-30 03:49:13', 0),
+(79, '::1', 'admin@gmail.com', 3, '2024-07-30 03:49:28', 1),
+(80, '::1', 'testing4@gmail.com', 16, '2024-07-30 03:58:37', 1),
+(81, '::1', 'testing4@gmail.com', 16, '2024-07-30 10:02:04', 1),
+(82, '::1', 'admin', NULL, '2024-07-30 10:09:27', 0),
+(83, '::1', 'admin@gmail.com', 3, '2024-07-30 10:09:36', 1),
+(84, '::1', 'testing4@gmail.com', 16, '2024-07-30 10:11:24', 1);
 
 -- --------------------------------------------------------
 
@@ -253,6 +303,14 @@ CREATE TABLE `penggunaan` (
   `meter_akhir` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `penggunaan`
+--
+
+INSERT INTO `penggunaan` (`id`, `id_users`, `bulan`, `tahun`, `meter_awal`, `meter_akhir`) VALUES
+(4, 16, 'Januari', 2024, 1200, 1300),
+(5, 16, 'Februari', 2024, 1300, 1350);
+
 -- --------------------------------------------------------
 
 --
@@ -306,9 +364,20 @@ CREATE TABLE `users` (
   `nomorhp` varchar(255) DEFAULT NULL,
   `alamat` varchar(100) DEFAULT NULL,
   `nomorkwh` varchar(255) DEFAULT NULL,
-  `id_tarif` int(11) UNSIGNED NOT NULL
+  `id_tarif` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
--- Error reading data for table bayarlistrik.users: #2006 - MySQL server has gone away
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `username`, `password_hash`, `reset_hash`, `reset_at`, `reset_expires`, `activate_hash`, `status`, `status_message`, `active`, `force_pass_reset`, `created_at`, `updated_at`, `deleted_at`, `namalengkap`, `nomorhp`, `alamat`, `nomorkwh`, `id_tarif`) VALUES
+(3, 'admin@gmail.com', 'admin', '$2y$10$8H6c8qcVQ7Zq/pqSR7jWuu3vKVs39sbU4/dIfKFHkCeZ0h6ORP9Vy', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-24 16:08:37', '2024-07-29 01:14:37', NULL, NULL, NULL, NULL, NULL, NULL),
+(13, 'testing@gmail.com', 'testing', '$2y$10$f0tQaj8NGo7v8dHeSfaYh.DkV6Ze3gis73KKxWobMZIQe5R7SLkeG', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-29 09:59:46', '2024-07-29 09:59:46', NULL, NULL, NULL, NULL, NULL, NULL),
+(14, 'testing2@gmail.com', 'testing2', '$2y$10$CAwV3/uG.Rx1sFVEQRXOnObCr.iMIvU8r5Oeyt6Y4WEIBCwc7esQu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-30 01:43:11', '2024-07-30 01:43:11', NULL, '', '', '', NULL, NULL),
+(15, 'testing3@gmail.com', 'testing3', '$2y$10$lUAnVWwcGRsyqRkpedjrJusY04Z2FB4ZTtezNjB3dXJbll53Z48Ki', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-30 02:02:06', '2024-07-30 02:02:06', NULL, NULL, NULL, NULL, NULL, NULL),
+(16, 'testing4@gmail.com', 'testing4', '$2y$10$oHriPNLEuG1JQDpTQvErxOl9CPr9aczq4Tu9.jxF1YL5Rt9yi09a6', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-30 02:02:57', '2024-07-30 13:23:10', NULL, 'test4', '0812812345', 'Jl. Pantai Sanur I No. 777', '1280938810', 5),
+(17, 'testing5@gmail.com', 'testing5', '$2y$10$WsALXD3GogtQoy94AAJLJetaYTL0CSogD2HSdoRtk32VQBejh/NLe', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2024-07-30 03:55:09', '2024-07-30 03:55:09', NULL, NULL, NULL, NULL, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -400,7 +469,8 @@ ALTER TABLE `tarif`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`),
-  ADD UNIQUE KEY `username` (`username`);
+  ADD UNIQUE KEY `username` (`username`),
+  ADD KEY `tarif_id_foreign` (`id_tarif`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -422,7 +492,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT for table `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `auth_permissions`
@@ -452,13 +522,13 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `penggunaan`
 --
 ALTER TABLE `penggunaan`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Constraints for dumped tables
@@ -496,14 +566,14 @@ ALTER TABLE `auth_users_permissions`
 --
 ALTER TABLE `penggunaan`
   ADD CONSTRAINT `penggunaan_id_user_foreign` FOREIGN KEY (`id_users`) REFERENCES `users` (`id`) ON DELETE CASCADE;
-<div class="alert alert-danger" role="alert"><h1>Error</h1><p><strong>SQL query:</strong>  <a href="#" class="copyQueryBtn" data-text="SET time_zone = &quot;SYSTEM&quot;">Copy</a>
-<a href="index.php?route=/database/sql&sql_query=SET+time_zone+%3D+%22SYSTEM%22&show_query=1&db=bayarlistrik"><span class="text-nowrap"><img src="themes/dot.gif" title="Edit" alt="Edit" class="icon ic_b_edit">&nbsp;Edit</span></a>    </p>
-<p>
-<code class="sql"><pre>
-SET time_zone = &quot;SYSTEM&quot;
-</pre></code>
-</p>
-<p>
-    <strong>MySQL said: </strong><a href="./url.php?url=https%3A%2F%2Fdev.mysql.com%2Fdoc%2Frefman%2F8.0%2Fen%2Fserver-error-reference.html" target="mysql_doc"><img src="themes/dot.gif" title="Documentation" alt="Documentation" class="icon ic_b_help"></a>
-</p>
-<code>#2006 - MySQL server has gone away</code><br></div>
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `tarif_id_foreign` FOREIGN KEY (`id_tarif`) REFERENCES `tarif` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

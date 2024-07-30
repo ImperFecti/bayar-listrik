@@ -30,9 +30,8 @@ class Pelanggan extends BaseController
         }
 
         $userId = $auth->id(); // Get the authenticated user's ID
-        $userModel = new UserModel();
-        $data_user = $userModel->find($userId);
-        // dd($data_user);
+        $data_user = $this->_user_model->getUser($userId);
+
         $data = [
             'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_user
@@ -46,16 +45,15 @@ class Pelanggan extends BaseController
     public function editprofile()
     {
         $data_user = $this->_user_model->getUser(user_id());
-
-        // dd($data_user);
+        $tarifModel = new \App\Models\TarifModel();
+        $tarif = $tarifModel->findAll();
 
         $data = [
             'title' => 'Edit Profile | PEMBAYARAN LISTRIK ONLINE',
-            'result' => $data_user
+            'result' => $data_user,
+            'tarif' => $tarif
         ];
 
-
-        // Return the view for editing the profile
         return view('pages/pelanggan/editprofile', $data);
     }
 
@@ -68,12 +66,14 @@ class Pelanggan extends BaseController
             'email' => $this->request->getPost('email'),
             'nomorhp' => $this->request->getPost('nomorhp'),
             'alamat' => $this->request->getPost('alamat'),
-            'nomorkwh' => $this->request->getPost('nomorkwh')
+            'nomorkwh' => $this->request->getPost('nomorkwh'),
+            'id_tarif' => $this->request->getPost('id_tarif')
         ]);
 
         session()->setFlashdata('success', 'Profile updated successfully');
         return redirect()->to('/profile');
     }
+
 
     public function ubahpassword()
     {

@@ -45,26 +45,26 @@
                         <!-- User details -->
                         <div class="col-md-8">
                             <div class="card-body p-4">
-                                <h6>Profile Pelanggan</h6>
+                                <h6>Profile <?= $result->group_name ?></h6>
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
                                     <!-- Email information -->
-                                    <div class="col-6 mb-3">
+                                    <div class="col-6">
                                         <h6>Email</h6>
                                         <p class="text-muted"><?= $result->email ?></p>
                                     </div>
                                     <!-- Phone number information -->
-                                    <div class="col-6 mb-3">
+                                    <div class="col-6">
                                         <h6>Nomor Handphone</h6>
                                         <p class="text-muted"><?= $result->nomorhp ?></p>
                                     </div>
                                     <!-- kWh number information -->
-                                    <div class="col-6 mb-3">
+                                    <div class="col-6">
                                         <h6>Nomor kWh</h6>
                                         <p class="text-muted"><?= $result->nomorkwh ?></p>
                                     </div>
                                     <!-- Address information -->
-                                    <div class="col-6 mb-3">
+                                    <div class="col-6">
                                         <h6>Alamat Rumah</h6>
                                         <p class="text-muted"><?= $result->alamat ?></p>
                                     </div>
@@ -73,25 +73,25 @@
                                 <hr class="mt-0 mb-4">
                                 <div class="row pt-1">
                                     <!-- Electrical classification information -->
-                                    <div class="col-6 mb-3">
+                                    <div class="col-6">
                                         <h6>Golongan Listrik Rumah</h6>
-                                        <p class="text-muted">R2/450VA</p>
+                                        <p class="text-muted"><?= $result->golongan ?>/<?= $result->daya ?> (<?= $result->tarifperkwh ?> per kWh)</p>
                                     </div>
                                     <!-- Payment status information -->
-                                    <div class="col-6 mb-3">
-                                        <h6>Status pembayaran</h6>
-                                        <p class="text-muted">Terbayarkan Bulan Juni</p>
+                                    <div class="col-6">
+                                        <h6>Status Pembayaran</h6>
+                                        <p class="text-muted"><?= $result->active == 1 ? 'Aktif' : 'Tidak Aktif' ?></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <!-- End of user profile card -->
             </div>
         </div>
+
     </div>
 </section>
 
+<!-- End content section -->
 <?= $this->endSection(); ?>
-<!-- End of content section -->

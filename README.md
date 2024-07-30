@@ -19,6 +19,13 @@ Here is what you need to download for the first time if you want to develop this
 - Edit Profile features for admin account and customer account
 - Update Password features for admin account and customer account
 
+## What Do I Use in This Website ?
+
+- CodeIgniter 4 v4.5.3
+- Bootstrap v5.3
+- Myth/Auth v1.2.1
+- GroceryCRUD v2.0.1
+
 ## Setup
 
 - Make sure that you have already installed all the website development requirements above.
