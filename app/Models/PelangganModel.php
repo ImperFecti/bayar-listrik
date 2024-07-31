@@ -35,6 +35,7 @@ class PelangganModel extends Model
             return $this->where(['users.id' => $id])->first();
         }
     }
+
     // Metode untuk menghapus user
     public function deleteUser($id)
     {

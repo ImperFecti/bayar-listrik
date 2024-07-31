@@ -75,7 +75,7 @@
                                     <!-- Electrical classification information -->
                                     <div class="col-6">
                                         <h6>Golongan Listrik Rumah</h6>
-                                        <p class="text-muted"><?= $result->golongan ?>/<?= $result->daya ?> (<?= $result->tarifperkwh ?> per kWh)</p>
+                                        <p class="text-muted"><?= $result->golongan ?>/<?= $result->daya ?>VA - Rp. <?= $result->tarifperkwh ?> per kWh</p>
                                     </div>
                                     <!-- Payment status information -->
                                     <div class="col-6">

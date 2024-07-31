@@ -97,7 +97,7 @@ class Pelanggan extends BaseController
         ];
 
         if (!$this->validate($rules)) {
-            return redirect()->to('/ubahpassword')->withInput();
+            return redirect()->to('/ubahpassword')->withInput()->with('validation', $this->validator);
         }
 
         $userModel = new UserModel();
@@ -112,7 +112,7 @@ class Pelanggan extends BaseController
         $newPassword = Password::hash($this->request->getVar('new_password'));
         $userModel->update($id, ['password_hash' => $newPassword]);
 
-        session()->setFlashdata('success', 'Password updated successfully');
+        session()->setFlashdata('success', 'Password Berhasil Diubah');
         return redirect()->to('/ubahpassword');
     }
 
@@ -145,13 +145,11 @@ class Pelanggan extends BaseController
     {
         $auth = service('authentication');
         if (!$auth->check()) {
-            return redirect()->to('/login'); // Redirect to login if not authenticated
+            return redirect()->to('/login');
         }
 
-        $userId = $auth->id(); // Get the authenticated user's ID
-
-        // Ambil data tagihan berdasarkan ID tagihan
-        $tagihan = $this->penggunaanModel->find($id);
+        $userId = $auth->id();
+        $tagihan = $this->penggunaanModel->getBayar($id); // Make sure getBayar method includes the necessary joins and fields
 
         if ($tagihan['id_users'] != $userId) {
             return redirect()->to('/tagihanlistrik')->with('error', 'Access denied.');
@@ -160,7 +158,7 @@ class Pelanggan extends BaseController
         $userModel = new UserModel();
         $data_user = $userModel->find($tagihan['id_users']);
 
-        // Siapkan data untuk dikirim ke view
+
         $data = [
             'title' => 'Bukti Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
             'tagihan' => $tagihan,
@@ -168,8 +166,6 @@ class Pelanggan extends BaseController
         ];
 
         // dd($tagihan);
-
-        // Return the view for the electricity bill
         return view('pages/pelanggan/buktitagihan', $data);
     }
 

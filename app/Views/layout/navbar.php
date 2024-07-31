@@ -65,6 +65,10 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <?php if (logged_in()) : ?>
                             <!-- Links for logged-in users -->
+                            <li><a class="dropdown-item" href="#">Welcome, <?= user()->username ?></a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <li><a class="dropdown-item" href="/profile">Profile</a></li>
                             <li><a class="dropdown-item" href="/editprofile">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="/ubahpassword">Ubah Password</a></li>

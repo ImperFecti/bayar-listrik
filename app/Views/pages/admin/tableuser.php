@@ -63,54 +63,54 @@
                                 foreach ($result as $value) : ?>
                                     <tr>
                                         <td><?= $no++ ?></td>
-                                        <td><?= $value['username'] ?></td>
-                                        <td><?= $value['namalengkap'] ?></td>
-                                        <td><?= $value['email'] ?></td>
-                                        <td><?= $value['nomorhp'] ?></td>
-                                        <td><?= $value['alamat'] ?></td>
-                                        <td><?= $value['group_name'] ?></td>
+                                        <td><?= $value->username ?></td>
+                                        <td><?= $value->namalengkap ?></td>
+                                        <td><?= $value->email ?></td>
+                                        <td><?= $value->nomorhp ?></td>
+                                        <td><?= $value->alamat ?></td>
+                                        <td><?= $value->group_name ?></td>
                                         <td>
                                             <!-- Form to delete user -->
-                                            <form action="<?= site_url('admin/deleteUser/' . $value['id']) ?>" method="post" style="display:inline;">
+                                            <form action="<?= site_url('admin/deleteUser/' . $value->id) ?>" method="post" style="display:inline;">
                                                 <?= csrf_field() ?>
                                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')">Delete</button>
                                             </form>
                                             <!-- Edit button -->
-                                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal<?= $value['id'] ?>">
+                                            <button type="button" class="btn btn-warning btn-sm" data-bs-toggle="modal" data-bs-target="#editUserModal<?= $value->id ?>">
                                                 Ubah
                                             </button>
                                         </td>
                                     </tr>
                                     <!-- Edit User Modal -->
-                                    <div class="modal fade" id="editUserModal<?= $value['id'] ?>" tabindex="-1" aria-labelledby="editUserModalLabel<?= $value['id'] ?>" aria-hidden="true">
+                                    <div class="modal fade" id="editUserModal<?= $value->id ?>" tabindex="-1" aria-labelledby="editUserModalLabel<?= $value->id ?>" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
-                                                <form action="<?= site_url('admin/ubahpelanggan/' . $value['id']) ?>" method="post">
+                                                <form action="<?= site_url('admin/ubahpelanggan/' . $value->id) ?>" method="post">
                                                     <?= csrf_field() ?>
                                                     <div class="modal-header">
-                                                        <h5 class="modal-title" id="editUserModalLabel<?= $value['id'] ?>">Ubah Data User</h5>
+                                                        <h5 class="modal-title" id="editUserModalLabel<?= $value->id ?>">Ubah Data User</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="mb-3">
-                                                            <label for="username<?= $value['id'] ?>" class="form-label">Username</label>
-                                                            <input type="text" class="form-control" id="username<?= $value['id'] ?>" name="username" value="<?= $value['username'] ?>" required>
+                                                            <label for="username<?= $value->id ?>" class="form-label">Username</label>
+                                                            <input type="text" class="form-control" id="username<?= $value->id ?>" name="username" value="<?= $value->username ?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="namalengkap<?= $value['id'] ?>" class="form-label">Nama Lengkap</label>
-                                                            <input type="text" class="form-control" id="namalengkap<?= $value['id'] ?>" name="namalengkap" value="<?= $value['namalengkap'] ?>" required>
+                                                            <label for="namalengkap<?= $value->id ?>" class="form-label">Nama Lengkap</label>
+                                                            <input type="text" class="form-control" id="namalengkap<?= $value->id ?>" name="namalengkap" value="<?= $value->namalengkap ?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="email<?= $value['id'] ?>" class="form-label">Email</label>
-                                                            <input type="email" class="form-control" id="email<?= $value['id'] ?>" name="email" value="<?= $value['email'] ?>" required>
+                                                            <label for="email<?= $value->id ?>" class="form-label">Email</label>
+                                                            <input type="email" class="form-control" id="email<?= $value->id ?>" name="email" value="<?= $value->email ?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="nomorhp<?= $value['id'] ?>" class="form-label">Nomor HP</label>
-                                                            <input type="text" class="form-control" id="nomorhp<?= $value['id'] ?>" name="nomorhp" value="<?= $value['nomorhp'] ?>" required>
+                                                            <label for="nomorhp<?= $value->id ?>" class="form-label">Nomor HP</label>
+                                                            <input type="text" class="form-control" id="nomorhp<?= $value->id ?>" name="nomorhp" value="<?= $value->nomorhp ?>" required>
                                                         </div>
                                                         <div class="mb-3">
-                                                            <label for="alamat<?= $value['id'] ?>" class="form-label">Alamat</label>
-                                                            <input type="text" class="form-control" id="alamat<?= $value['id'] ?>" name="alamat" value="<?= $value['alamat'] ?>" required>
+                                                            <label for="alamat<?= $value->id ?>" class="form-label">Alamat</label>
+                                                            <input type="text" class="form-control" id="alamat<?= $value->id ?>" name="alamat" value="<?= $value->alamat ?>" required>
                                                         </div>
                                                         <div class="modal-footer">
                                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

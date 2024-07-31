@@ -31,20 +31,17 @@ $routes->post('admin/ubahbayar/(:num)', 'Admin::ubahbayar/$1', ['filter' => 'rol
 
 
 // Route untuk halaman profil pelanggan
-$routes->get('/profile', 'Pelanggan::profile');
-
-$routes->get('/ubahpassword', 'Pelanggan::ubahpassword');
-$routes->post('/updatepassword/(:num)', 'Pelanggan::updatepassword/$1');
+$routes->get('/profile', 'Pelanggan::profile', ['filter' => 'role:pelanggan']);
+$routes->get('/ubahpassword', 'Pelanggan::ubahpassword', ['filter' => 'role:pelanggan']);
+$routes->post('/updatepassword/(:num)', 'Pelanggan::updatepassword/$1', ['filter' => 'role:pelanggan']);
 
 // Route untuk halaman edit profil pelanggan
-$routes->get('/editprofile', 'Pelanggan::editprofile');
-$routes->post('/updateprofile/(:num)', 'Pelanggan::updateprofile/$1');
+$routes->get('/editprofile', 'Pelanggan::editprofile', ['filter' => 'role:pelanggan']);
+$routes->post('/updateprofile/(:num)', 'Pelanggan::updateprofile/$1', ['filter' => 'role:pelanggan']);
 
-$routes->get('/bayarlistrik', 'Pelanggan::bayarlistrik');
+$routes->get('/bayarlistrik', 'Pelanggan::bayarlistrik', ['filter' => 'role:pelanggan']);
 // Update route untuk pembayaran listrik
-$routes->post('/bayar/(:num)', 'Pelanggan::bayar/$1');
-
-
+$routes->post('/bayar/(:num)', 'Pelanggan::bayar/$1', ['filter' => 'role:pelanggan']);
 
 // Route untuk halaman tagihan listrik (dengan filter role pelanggan)
 $routes->get('/tagihanlistrik', 'Pelanggan::tagihanlistrik', ['filter' => 'role:pelanggan']);

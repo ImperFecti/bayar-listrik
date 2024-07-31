@@ -59,20 +59,27 @@
                 </div>
                 <div class="row">
                     <div class="col-xl-8">
-                        <p class="ms-3">Tagihan Listrik Bulan <?= esc($tagihan['bulan']) ?> Tahun <?= esc($tagihan['tahun']) ?> Listrik Golongan R2/450VA - Rp. 750 per kWh</p>
+                        <p class="ms-3">Tagihan Listrik Bulan <?= esc($tagihan['bulan']) ?> Tahun <?= esc($tagihan['tahun']) ?> Listrik Golongan <?= esc($tagihan['golongan'] ?? '') ?>/<?= esc($tagihan['daya'] ?? '') ?>VA - Rp. <?= esc($tagihan['tarifperkwh'] ?? '') ?> per kWh</p>
                     </div>
                     <div class="col-xl-3">
                         <ul class="list-unstyled">
                             <li class="text-muted ms-3"><span class="text-black me-4">Meter Awal</span><?= esc($tagihan['meter_awal']) ?></li>
                             <li class="text-muted ms-3 mt-2"><span class="text-black me-4">Meter Akhir</span><?= esc($tagihan['meter_akhir']) ?></li>
                         </ul>
-                        <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span style="font-size: 25px;">Rp. <?= esc(($tagihan['meter_akhir'] - $tagihan['meter_awal']) * 750) ?></span></p>
+                        <p class="text-black float-start"><span class="text-black me-3"> Total Amount</span><span style="font-size: 25px;">Rp. <?= ($tagihan['meter_akhir'] - $tagihan['meter_awal']) * $result->tarifperkwh; ?></span></p>
                     </div>
                 </div>
+
                 <hr>
-                <div class="col-xl-2">
-                    <button type="button" class="btn btn-primary text-capitalize" style="background-color:#60bdf3 ;">Pay Now</button>
+                <div class="row">
+                    <div class="col-xl-10">
+                        <p>Terima Kasih Telah Melakukan Pembayaran Listrik di Aplikasi Pembayaran Listrik Pascabayar</p>
+                    </div>
+                    <div class="col-xl-2">
+                        <button type="button" class="btn btn-primary text-capitalize">Pay Now</button>
+                    </div>
                 </div>
+
             </div>
         </div>
     </div>

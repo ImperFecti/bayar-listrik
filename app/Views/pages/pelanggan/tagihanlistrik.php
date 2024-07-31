@@ -21,12 +21,12 @@
                 <?php foreach ($tagihan as $index => $row) : ?>
                     <tr>
                         <td><?= $index + 1 ?></td>
-                        <td><?= esc($row['bulan']) ?></td>
-                        <td><?= esc($row['tahun']) ?></td>
-                        <td><?= esc($row['meter_awal']) ?></td>
-                        <td><?= esc($row['meter_akhir']) ?></td>
+                        <td><?= $row->bulan ?></td>
+                        <td><?= $row->tahun ?></td>
+                        <td><?= $row->meter_awal ?></td>
+                        <td><?= $row->meter_akhir ?></td>
                         <td>
-                            <a href="<?= site_url('/buktitagihan/' . $row['id']) ?>" class="btn btn-info">View</a>
+                            <a href="<?= site_url('/buktitagihan/' . $row->id) ?>" class="btn btn-info">View</a>
                         </td>
                     </tr>
                 <?php endforeach; ?>

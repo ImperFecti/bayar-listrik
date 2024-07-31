@@ -5,6 +5,24 @@
 <?= $this->section('content'); ?>
 
 <div class="container rounded bg-white mt-5 mb-5">
+    <!-- Alert -->
+    <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-success" role="alert">
+            <?= session()->getFlashdata('success') ?>
+        </div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('warning')) : ?>
+        <div class="alert alert-warning" role="alert">
+            <?= session()->getFlashdata('warning') ?>
+        </div>
+    <?php endif; ?>
+    <?php if (session()->getFlashdata('error')) : ?>
+        <div class="alert alert-danger" role="alert">
+            <?= session()->getFlashdata('error') ?>
+        </div>
+    <?php endif; ?>
+    <!-- End Alert -->
+
     <div class="row justify-content-center">
         <div class="col-md-5 border-right">
             <div class="p-3 py-5">
@@ -34,7 +52,7 @@
                         </div>
                     </div>
                     <!-- Submit button -->
-                    <div class="mt-5 text-center">
+                    <div class="mt-5 mb-5 text-center">
                         <button class="btn btn-primary profile-button" type="submit">Save Profile</button>
                     </div>
                 </form>

@@ -5,7 +5,7 @@
 
 /* styling hero section */
 .hero {
-  background-image: url(https://1.bp.blogspot.com/-zxeLvfoScGk/XzyJGtqniOI/AAAAAAAA4z0/C-J-3GfC4sEOedX_EY5Ekx1RTgGEF9TNwCLcBGAsYHQ/s2560/towers_wires_mountains_181183_3840x2160.jpg);
+  background-image: url(../img/tower.jpg);
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -50,6 +50,11 @@
 }
 
 /* styling footer */
+.cta {
+  -webkit-box-shadow: 0px -22px 44px -5px rgba(0, 0, 0, 0.28);
+  -moz-box-shadow: 0px -22px 44px -5px rgba(0, 0, 0, 0.28);
+  box-shadow: 0px -22px 44px -5px rgba(0, 0, 0, 0.28);
+}
 .cta-section {
   display: flex;
   justify-content: center;
