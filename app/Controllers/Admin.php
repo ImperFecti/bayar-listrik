@@ -42,7 +42,10 @@ class Admin extends BaseController
     // Method to display the user table
     public function tableuser()
     {
-        $data_user = $this->_user_model->getUser();
+        $auth = service('authentication');
+        $id = $auth->id(); // Get the ID of the logged-in admin
+
+        $data_user = $this->_user_model->getUser($id);
         $data = [
             'title' => 'Data Tabel Pelanggan | PEMBAYARAN LISTRIK ONLINE',
             'result' => $data_user

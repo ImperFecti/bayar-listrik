@@ -27,6 +27,22 @@ class PelangganModel extends Model
             ->join('auth_groups_users', 'auth_groups_users.user_id = users.id', 'left')
             ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id', 'left')
             ->join('tarif', 'users.id_tarif = tarif.id', 'left')
+            ->where('auth_groups.name !=', 'admin') // Exclude admin users
+            ->asObject();
+
+        if ($id !== false) {
+            $this->where('users.id !=', $id); // Exclude logged-in admin user
+        }
+
+        return $this->findAll();
+    }
+
+    public function getUserProfile($id = false)
+    {
+        $this->select('users.*, tarif.golongan, tarif.daya, tarif.tarifperkwh, auth_groups.name as group_name')
+            ->join('auth_groups_users', 'auth_groups_users.user_id = users.id', 'left')
+            ->join('auth_groups', 'auth_groups.id = auth_groups_users.group_id', 'left')
+            ->join('tarif', 'users.id_tarif = tarif.id', 'left')
             ->asObject();
 
         if ($id === false) {

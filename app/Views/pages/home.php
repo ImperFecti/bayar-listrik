@@ -18,8 +18,8 @@
 <!-- hero section end -->
 
 <!-- mini navbar start -->
-<div class="nvbr fade-in">
-    <div class="nvbr-container">
+<div class="nvbr fade-in sticky-top">
+    <div class="nvbr-container ">
         <a href="#Home" class="nvbr-item">
             <span>01</span>
             Keunggulan Website Ini
@@ -31,6 +31,10 @@
         <a href="/kalkulator" class="nvbr-item">
             <span>03</span>
             Kalkulator Hitung Listrik
+        </a>
+        <a href="#Contact" class="nvbr-item">
+            <span>04</span>
+            Contact Admin
         </a>
     </div>
 </div>
@@ -71,6 +75,7 @@
             </tr>
         </tbody>
     </table>
+    <hr>
 </div>
 <!-- home section end -->
 

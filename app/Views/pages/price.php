@@ -52,6 +52,25 @@
         </div>
     </div>
 </section>
+
+<div class="contact fade-in" id="Contact">
+    <div class="contact-header">
+        <h2>Ada Pertanyaan ?</h2>
+        <p>Bila anda memiliki pertanyaan silahkan untuk menghubungi admin di bawah ini.</p>
+    </div>
+    <div class="contact-grid">
+        <div class="contact-card fade-in">
+            <h3>Admin 1</h3>
+            <a href="mailto:admin1@example.com">admin1@example.com</a>
+            <p>(+62) 091 2890 7774</p>
+        </div>
+        <div class="contact-card fade-in">
+            <h3>Admin 2</h3>
+            <a href="mailto:admin2@example.com">admin2@example.com</a>
+            <p>(+62) 612 1827 0097</p>
+        </div>
+    </div>
+</div>
 <!-- price tags section end -->
 <?= $this->endSection(); ?>
 <!-- ending declare content -->

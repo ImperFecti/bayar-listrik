@@ -13,36 +13,36 @@
                     <div class="row mt-2">
                         <div class="col-md-6">
                             <label class="labels">Username</label>
-                            <input type="text" class="form-control" name="username" value="<?= $result->username ?>">
+                            <input type="text" class="form-control" name="username" value="<?= $result['username'] ?>">
                         </div>
                         <div class="col-md-6">
                             <label class="labels">Nama</label>
-                            <input type="text" class="form-control" name="namalengkap" value="<?= $result->namalengkap ?>">
+                            <input type="text" class="form-control" name="namalengkap" value="<?= $result['namalengkap'] ?>">
                         </div>
                     </div>
                     <hr>
                     <div class="row mt-3">
                         <div class="col-md-12">
                             <label class="labels">Nomor Handphone</label>
-                            <input type="number" class="form-control" name="nomorhp" value="<?= $result->nomorhp ?>">
+                            <input type="number" class="form-control" name="nomorhp" value="<?= $result['nomorhp'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Alamat Rumah</label>
-                            <input type="text" class="form-control" name="alamat" value="<?= $result->alamat ?>">
+                            <input type="text" class="form-control" name="alamat" value="<?= $result['alamat'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Nomor kWh</label>
-                            <input type="number" class="form-control" name="nomorkwh" value="<?= $result->nomorkwh ?>">
+                            <input type="number" class="form-control" name="nomorkwh" value="<?= $result['nomorkwh'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Email</label>
-                            <input type="email" class="form-control" name="email" value="<?= $result->email ?>">
+                            <input type="email" class="form-control" name="email" value="<?= $result['email'] ?>">
                         </div>
                         <div class="col-md-12 mt-3">
                             <label class="labels">Golongan Listrik</label>
                             <select class="form-control" name="id_tarif">
                                 <?php foreach ($tarif as $t) : ?>
-                                    <option value="<?= $t['id'] ?>" <?= $result->id_tarif == $t['id'] ? 'selected' : '' ?>>
+                                    <option value="<?= $t['id'] ?>" <?= $result['id_tarif'] == $t['id'] ? 'selected' : '' ?>>
                                         <?= $t['golongan'] ?> - <?= $t['daya'] ?> - <?= $t['tarifperkwh'] ?> per kWh
                                     </option>
                                 <?php endforeach; ?>

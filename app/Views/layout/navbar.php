@@ -27,11 +27,6 @@
                     <a class="nav-link" href="/">Home</a>
                 </li>
 
-                <!-- Tariff page link -->
-                <li class="nav-item">
-                    <a class="nav-link" href="/price">Tarif per kWh</a>
-                </li>
-
                 <!-- Calculator page link -->
                 <li class="nav-item">
                     <a class="nav-link" href="/kalkulator">Kalkulator Listrik</a>

@@ -26,15 +26,4 @@ class Home extends BaseController
         // Return the calculator view with the data
         return view('pages/kalkulator', $data);
     }
-
-    // Method to display the price page
-    public function harga()
-    {
-        // Prepare data for the view
-        $data = [
-            'title' => 'Tarif | PEMBAYARAN LISTRIK ONLINE'
-        ];
-        // Return the price view with the data
-        return view('pages/price', $data);
-    }
 }

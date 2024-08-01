@@ -30,7 +30,7 @@ class Pelanggan extends BaseController
         }
 
         $userId = $auth->id(); // Get the authenticated user's ID
-        $data_user = $this->_user_model->getUser($userId);
+        $data_user = $this->_user_model->getUserProfile($userId);
 
         $data = [
             'title' => 'Profile | PEMBAYARAN LISTRIK ONLINE',
@@ -44,7 +44,14 @@ class Pelanggan extends BaseController
     // Method to display the edit profile page
     public function editprofile()
     {
-        $data_user = $this->_user_model->getUser(user_id());
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login'); // Redirect to login if not authenticated
+        }
+
+        $userId = $auth->id();
+        $data_user = $this->_user_model->find($userId);
+
         $tarifModel = new \App\Models\TarifModel();
         $tarif = $tarifModel->findAll();
 

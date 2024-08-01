@@ -115,7 +115,6 @@
 .plan:hover {
   transform: scale(1.05);
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  background: #e0e0e0; /* Optional: Change background color on hover */
 }
 
 .plan h2 {
@@ -147,6 +146,63 @@
   color: #333;
   display: flex;
   align-items: center;
+}
+
+/* style contact */
+.contact {
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  padding: 20px;
+}
+
+.contact-header {
+  text-align: left;
+  margin-bottom: 30px;
+}
+
+.contact-header h2 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.contact-header p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contact-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.contact-card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 calc(50% - 20px);
+  padding: 20px;
+  min-width: 200px;
+  transition: 1s box-shadow;
+}
+
+.contact-card:hover {
+  box-shadow: 0 5px 35px 0px rgba(0, 0, 0, 0.1);
+}
+
+.contact-card h3 {
+  margin-top: 0;
+}
+
+.contact-card a {
+  color: #3b82f6;
+  text-decoration: none;
+}
+
+.contact-card p {
+  color: #555;
+  margin-top: 10px;
 }
 
 /* styling profilepelanggan */
@@ -220,13 +276,13 @@
   font-family: Arial, sans-serif;
   margin: 50px 0;
   box-sizing: border-box;
+  background-color: white;
 }
 
 .nvbr-container {
   display: flex;
   justify-content: space-around; /* Use space-around for equal spacing */
   flex-wrap: wrap; /* Allow wrapping for smaller screens */
-  padding: 20px;
 }
 
 .nvbr-item {

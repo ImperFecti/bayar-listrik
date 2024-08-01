@@ -8,7 +8,6 @@ use CodeIgniter\Router\RouteCollection;
 
 // Route untuk konten halaman utama
 $routes->get('/', 'Home::index');
-$routes->get('/price', 'Home::harga');
 $routes->get('/kalkulator', 'Home::kalkulator');
 
 
