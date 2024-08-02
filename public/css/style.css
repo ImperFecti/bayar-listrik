@@ -33,22 +33,6 @@
   margin-bottom: 10px;
 }
 
-.table-laporan {
-  background-color: white;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  font-family: futura-pt, sans-serif;
-  font-weight: 400;
-  font-style: normal;
-  border-collapse: collapse;
-  width: 100%;
-  border-radius: 8px;
-  overflow: hidden;
-}
-
-.table-laporan thead th {
-  padding: 10px 15px; /* Atur padding sesuai kebutuhan Anda */
-}
-
 /* styling footer */
 .cta {
   -webkit-box-shadow: 0px -22px 44px -5px rgba(0, 0, 0, 0.28);

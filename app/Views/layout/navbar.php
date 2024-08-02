@@ -60,7 +60,9 @@
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <?php if (logged_in()) : ?>
                             <!-- Links for logged-in users -->
-                            <li><a class="dropdown-item" href="#">Welcome, <?= user()->username ?></a></li>
+                            <li>
+                                <a class="dropdown-item">Welcome, <?= user()->username ?></a>
+                            </li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>

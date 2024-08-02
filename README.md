@@ -1,5 +1,7 @@
 # APLIKASI LISTRIK PASCABAYAR - THIS REPOSITORY STILL IN DEVELOPMENT
 
+If you find this repository useful and want to use it, please consider giving it a star. This will show your support to this reposirtory and help others discover it.
+
 ## This Website Development Requirements
 
 Here is what you need to download for the first time if you want to develop this web site with my latest source code :
@@ -120,6 +122,29 @@ Change the value variable '$rememberLength' to whatever you want:
 ```
 public $rememberLength = 30 * DAY;
 ```
+
+## Preview
+
+- Landing Page
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268927623938183188/image.png?ex=66ae3471&is=66ace2f1&hm=48ae330efbe80e2dfae69fb15d90dc455e09aff6a6fa593f30c58f62d4cdcbf0&)
+
+- Calculator
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268929747476549666/kalkulator.png?ex=66ae366b&is=66ace4eb&hm=97602cac1f9deccc852a60660c6404e34aa809c136aa1903b46a75ac8c885b98&)
+
+- Electricity Billing List
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268929748189581343/list_tagihan_user.png?ex=66ae366b&is=66ace4eb&hm=8de28fc9c7e3da4d5052698f51f62985ae4f34af768902805fea1bf355ebf485&)
+
+- Invoice
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268931160051023956/image.png?ex=66ae37bc&is=66ace63c&hm=6f5982b197ee402a41ecbfb772bde151bdec6d01df8bcceaa828eb3775e3398f&)
+
+- Admin Dashboard
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268929747065372775/admin_dashboard.png?ex=66ae366b&is=66ace4eb&hm=33cae51e9505f3bacf8dc50b1b18a16a2a0bedb5cb7e85b84e46d3ab555661b2&)
+
+- User Management Table
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268929746603868301/table_user.png?ex=66ae366b&is=66ace4eb&hm=daeb498fcc8897d5f7253a8804bda1448c666bdf849337611b6148c89a91294f&)
+
+- Customer Billing List Management Table
+  ![](https://cdn.discordapp.com/attachments/563035937949483008/1268929746197151878/table_tagihan.png?ex=66ae366b&is=66ace4eb&hm=f3bc6670d6b48e2d6118d7b924727fd88da7766b79bdfdc2939c2ef576e9f827&)
 
 ## Found a problem when developing this application ?
 
