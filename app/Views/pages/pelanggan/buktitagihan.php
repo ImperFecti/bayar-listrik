@@ -76,10 +76,30 @@
                         <p>Terima Kasih Telah Melakukan Pembayaran Listrik di Aplikasi Pembayaran Listrik Pascabayar</p>
                     </div>
                     <div class="col-xl-2">
-                        <button type="button" class="btn btn-primary text-capitalize">Pay Now</button>
+                        <button type="button" class="btn btn-primary text-capitalize" data-bs-toggle="modal" data-bs-target="#uploadModal">Pay Now</button>
                     </div>
                 </div>
-
+                <!-- Modal for Uploading Proof of Payment -->
+                <div class="modal fade" id="uploadModal" tabindex="-1" aria-labelledby="uploadModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="uploadModalLabel">Upload Bukti Pembayaran</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="<?= base_url('pelanggan/uploadbukti/' . $tagihan->id) ?>" method="post" enctype="multipart/form-data">
+                                    <?= csrf_field() ?>
+                                    <div class="mb-3">
+                                        <label for="buktiPembayaran" class="form-label">Pilih Gambar Bukti Pembayaran</label>
+                                        <input class="form-control" type="file" id="buktiPembayaran" name="bukti_pembayaran" accept="image/*" required>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Upload</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

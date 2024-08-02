@@ -208,4 +208,45 @@ class Pelanggan extends BaseController
 
         return redirect()->to('/tagihanlistrik');
     }
+
+    public function uploadbukti($id)
+    {
+        $auth = service('authentication');
+        if (!$auth->check()) {
+            return redirect()->to('/login');
+        }
+
+        $userId = $auth->id();
+        $tagihan = $this->penggunaanModel->getBayar($id);
+
+        if ($tagihan->id_users != $userId) {
+            return redirect()->to('/tagihanlistrik')->with('error', 'Access denied.');
+        }
+
+        $validationRule = [
+            'bukti_pembayaran' => [
+                'label' => 'Bukti Pembayaran',
+                'rules' => 'uploaded[bukti_pembayaran]|is_image[bukti_pembayaran]|mime_in[bukti_pembayaran,image/jpg,image/jpeg,image/gif,image/png]|max_size[bukti_pembayaran,2048]',
+            ],
+        ];
+
+        if (!$this->validate($validationRule)) {
+            return redirect()->back()->with('error', $this->validator->getErrors());
+        }
+
+        $img = $this->request->getFile('bukti_pembayaran');
+        $newName = $img->getRandomName();
+        $img->move(WRITEPATH . 'uploads', $newName);
+
+        $pembayaranModel = new \App\Models\PembayaranModel();
+        $pembayaranModel->save([
+            'id_penggunaan' => $id,
+            'id_users' => $userId,
+            'bukti_pembayaran' => $newName,
+            'status' => 'Unpaid',
+        ]);
+
+        session()->setFlashdata('success', 'Bukti pembayaran berhasil diupload.');
+        return redirect()->to('/buktitagihan/' . $id);
+    }
 }
