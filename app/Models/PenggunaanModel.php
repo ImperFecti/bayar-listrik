@@ -13,21 +13,15 @@ class PenggunaanModel extends Model
     public function getBayar($id = false)
     {
         if ($id === false) {
-            return $this->select('penggunaan.id, penggunaan.id_users, penggunaan.bulan, penggunaan.tahun, penggunaan.meter_awal, penggunaan.meter_akhir, users.username, tarif.golongan, tarif.daya, tarif.tarifperkwh')
+            return $this->select('penggunaan.id, users.id as id_users, users.username, penggunaan.bulan, penggunaan.tahun, penggunaan.meter_awal, penggunaan.meter_akhir, tarif.golongan, tarif.daya, tarif.tarifperkwh')
                 ->join('users', 'users.id = penggunaan.id_users')
                 ->join('tarif', 'tarif.id = users.id_tarif')
                 ->asObject() // Ensure the result is returned as an object
                 ->findAll();
         } else {
-            return $this->select('penggunaan.*, tarif.golongan, tarif.daya, tarif.tarifperkwh')
-                ->join('users', 'users.id = penggunaan.id_users')
-                ->join('tarif', 'tarif.id = users.id_tarif')
-                ->where('penggunaan.id', $id)
-                ->asObject() // Ensure the result is returned as an object
-                ->first();
+            return $this->where(['id' => $id])->first();
         }
     }
-
 
     public function getTagihanByUserId($userId)
     {

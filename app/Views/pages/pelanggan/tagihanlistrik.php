@@ -2,14 +2,10 @@
 
 <?= $this->section('content'); ?>
 
-<!-- css datatable -->
-<link href="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/style.min.css" rel="stylesheet" />
-<link href="/css/adminstyles.css" rel="stylesheet">
-
 <div class="tagihan-body">
     <h1 class="">Tagihan Listrik</h1>
     <!-- Header Tabel -->
-    <table id="datatablesSimple">
+    <table class="table table-laporan table-bordered table-hover">
         <thead class="thead-dark">
             <tr>
                 <th>No</th>
@@ -42,10 +38,5 @@
         </tbody>
     </table>
 </div>
-
-<!-- DataTables JS -->
-<script src="https://cdn.jsdelivr.net/npm/simple-datatables@7.1.2/dist/umd/simple-datatables.min.js" crossorigin="anonymous"></script>
-<script src="js/datatables-simple-demo.js"></script>
-<script src="/js/adminscripts.js"></script>
 
 <?= $this->endSection(); ?>

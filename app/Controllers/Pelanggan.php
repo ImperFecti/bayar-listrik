@@ -158,12 +158,13 @@ class Pelanggan extends BaseController
         $userId = $auth->id();
         $tagihan = $this->penggunaanModel->getBayar($id); // Make sure getBayar method includes the necessary joins and fields
 
-        if ($tagihan->id_users != $userId) {
+        if ($tagihan['id_users'] != $userId) {
             return redirect()->to('/tagihanlistrik')->with('error', 'Access denied.');
         }
 
         $userModel = new UserModel();
-        $data_user = $userModel->find($tagihan->id_users);
+        $data_user = $userModel->find($tagihan['id_users']);
+
 
         $data = [
             'title' => 'Bukti Tagihan Listrik | PEMBAYARAN LISTRIK ONLINE',
